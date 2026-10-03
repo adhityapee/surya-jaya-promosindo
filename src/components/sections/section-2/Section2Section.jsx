@@ -4,9 +4,9 @@ const slides = [
   { desktop: "/assets/images/hero/hero-pen-office.webp", mobile: "/assets/images/hero/hero-pen-office.webp", label: "Pulpen custom untuk setiap ide", note: "Detail kecil yang selalu hadir di meja kerja" },
   { desktop: "/assets/images/hero/hero-tumbler-office.webp", mobile: "/assets/images/hero/hero-tumbler-office.webp", label: "Tumbler untuk ritme kerja aktif", note: "Souvenir fungsional yang menemani aktivitas harian" },
   { desktop: "/assets/images/hero/hero-tote-office.webp", mobile: "/assets/images/hero/hero-tote-office.webp", label: "Tote bag yang membawa identitas brand", note: "Praktis, reusable, dan mudah disesuaikan" },
-  { desktop: "/assets/images/hero/hero-lanyard-office.webp", mobile: "/assets/images/hero/hero-lanyard-office.webp", label: "Identitas acara yang tampil konsisten", note: "Lanyard dan ID card untuk tim maupun peserta" },
+  { desktop: "/assets/images/hero/hero-fan-office.webp", mobile: "/assets/images/hero/hero-fan-office.webp", label: "Kipas portable untuk aktivitas kantor", note: "Souvenir praktis dengan branding yang selalu terlihat" },
   { desktop: "/assets/images/hero/hero-corporate-gift-office.webp", mobile: "/assets/images/hero/hero-corporate-gift-office.webp", label: "Corporate gift yang siap berkesan", note: "Produk dan kemasan dalam satu identitas visual" },
-  { desktop: "/assets/images/hero/hero-apparel-office.webp", mobile: "/assets/images/hero/hero-apparel-office.webp", label: "Apparel custom untuk tim Anda", note: "Seragam yang nyaman dengan karakter brand" },
+  { desktop: "/assets/images/hero/hero-keychain-office.webp", mobile: "/assets/images/hero/hero-keychain-office.webp", label: "Gantungan kunci untuk identitas brand", note: "Aksen kecil yang ikut ke mana pun tas dibawa" },
   { desktop: "/assets/images/hero/hero-notebook-office.webp", mobile: "/assets/images/hero/hero-notebook-office.webp", label: "Notebook untuk ide yang terus bergerak", note: "Teman rapat dengan detail custom yang profesional" },
 ];
 
