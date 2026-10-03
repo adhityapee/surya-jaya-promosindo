@@ -8,6 +8,7 @@ const slides = [
   { desktop: "/assets/images/hero/hero-corporate-gift-office.webp", mobile: "/assets/images/hero/hero-corporate-gift-office.webp", label: "Corporate gift yang siap berkesan", note: "Produk dan kemasan dalam satu identitas visual" },
   { desktop: "/assets/images/hero/hero-keychain-office.webp", mobile: "/assets/images/hero/hero-keychain-office.webp", label: "Gantungan kunci untuk identitas brand", note: "Aksen kecil yang ikut ke mana pun tas dibawa" },
   { desktop: "/assets/images/hero/hero-notebook-office.webp", mobile: "/assets/images/hero/hero-notebook-office.webp", label: "Notebook untuk ide yang terus bergerak", note: "Teman rapat dengan detail custom yang profesional" },
+  { desktop: "/assets/images/hero/hero-calendar-office.webp", mobile: "/assets/images/hero/hero-calendar-office.webp", label: "Kalender custom untuk ruang kerja", note: "Kalender meja dan dinding yang menjaga brand tetap terlihat" },
 ];
 
 export default function Section2Section() {
