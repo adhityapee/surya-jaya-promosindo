@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.pwc/
+.agents/
+skills-lock.json
+*.log
+.env
+.env.*
+!.env.example
