@@ -1,6 +1,6 @@
 ﻿const categories = [
-  ["Tumbler & Mug", "tumbler-mug.webp", "drinkware"],
   ["Pulpen & Notebook", "pulpen-notebook.webp", "weekly-best"],
+  ["Tumbler & Mug", "tumbler-mug.webp", "drinkware"],
   ["Lanyard & ID Card", "lanyard-id-card.webp", "event-kit"],
   ["Tote Bag & Goodie Bag", "tote-goodie-bag.webp", "event-kit"],
   ["Gift Set & Hampers", "gift-set-hampers.webp", "corporate-gift"],

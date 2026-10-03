@@ -21,7 +21,7 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
               <div className="product-image"><img src={product.image} alt={product.name} />{product.badge && <span className="product-badge">{product.badge}</span>}</div>
               <h3 className="product-name">{product.name}</h3>
               <small className="product-tax">Minimum order: {product.minimum || "50 pcs"}</small>
-              <div className="product-price">{product.price}</div>
+              {product.price && <div className="product-price">{product.price}</div>}
               <div className="stock">{product.stock || "Bisa custom logo"}</div>
               <button className="card-detail" type="button" onClick={() => setSelected(product)}>Lihat detail</button>
             </article>
@@ -33,7 +33,7 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
           <article className="product-modal" role="dialog" aria-modal="true" aria-label={selected.name} onMouseDown={(event) => event.stopPropagation()}>
             <button className="modal-close" type="button" onClick={() => setSelected(null)} aria-label="Tutup">×</button>
             <img src={selected.image} alt={selected.name} />
-            <div className="product-modal__copy"><span className="image-product__eyebrow">KATALOG SOUVENIR</span><h3>{selected.name}</h3><p>{selected.description || "Produk dapat disesuaikan dengan logo, warna, dan kebutuhan acara Anda. Hubungi tim Surya Jaya Promosindo untuk pilihan bahan serta teknik cetak."}</p><strong>{selected.price}</strong><p className="stock">{selected.stock || "Bisa custom logo"}</p></div>
+            <div className="product-modal__copy"><span className="image-product__eyebrow">KATALOG SOUVENIR</span><h3>{selected.name}</h3><p>{selected.description || "Produk dapat disesuaikan dengan logo, warna, dan kebutuhan acara Anda. Hubungi tim Surya Jaya Promosindo untuk pilihan bahan serta teknik cetak."}</p>{selected.price && <strong>{selected.price}</strong>}<p className="stock">{selected.stock || "Bisa custom logo"}</p></div>
           </article>
         </div>
       )}
@@ -42,15 +42,15 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
 }
 
 const products = [
-  { name: "Tumbler vacuum stainless 500 ml", image: "/assets/images/755087333_220x220.jpg", price: "Mulai Rp 58.000", minimum: "50 pcs", badge: "Favorit" },
-  { name: "Mug keramik full color", image: "/assets/images/858066501_220x220.jpg", price: "Mulai Rp 24.000", minimum: "48 pcs" },
-  { name: "Tote bag kanvas custom", image: "/assets/images/899641802_220x220.jpg", price: "Mulai Rp 19.500", minimum: "100 pcs", badge: "Custom" },
-  { name: "Lanyard printing dua sisi", image: "/assets/images/898237802_220x220.jpg", price: "Mulai Rp 8.500", minimum: "100 pcs" },
-  { name: "Pulpen metal laser grafir", image: "/assets/images/898238202_220x220.jpg", price: "Mulai Rp 16.000", minimum: "100 pcs", badge: "Premium" },
-  { name: "Notebook A5 custom", image: "/assets/images/2145000-214004302_300x300.jpg", price: "Mulai Rp 32.000", minimum: "50 pcs" },
-  { name: "Payung lipat otomatis", image: "/assets/images/300049902_300x300.jpg", price: "Mulai Rp 72.000", minimum: "50 pcs" },
+  { name: "Pulpen metal executive", image: "/assets/images/products/stationery/pulpen-metal-executive.webp", price: "Mulai Rp 16.000", minimum: "100 pcs", badge: "Premium", description: "Pulpen metal dengan finishing profesional yang dapat dipersonalisasi menggunakan laser grafir untuk kebutuhan perusahaan dan hadiah eksklusif." },
+  { name: "Pulpen plastik full color", image: "/assets/images/products/stationery/pulpen-plastik-promosi.webp", price: "Mulai Rp 5.500", minimum: "200 pcs", badge: "Hemat", description: "Pulpen promosi ringan dengan pilihan warna cerah dan area cetak luas untuk logo, kampanye, atau kebutuhan acara." },
+  { name: "Pulpen stylus 2-in-1", image: "/assets/images/products/stationery/pulpen-stylus-2-in-1.webp", price: "Mulai Rp 13.500", minimum: "100 pcs", badge: "Multifungsi", description: "Pulpen metal dua fungsi dengan ujung stylus untuk layar sentuh, cocok sebagai merchandise kerja yang praktis." },
+  { name: "Notebook A5 hardcover custom", image: "/assets/images/products/stationery/notebook-a5-hardcover.webp", price: "Mulai Rp 32.000", minimum: "50 pcs", badge: "Favorit", description: "Notebook hardcover A5 dengan elastic closure dan ribbon bookmark yang dapat dicetak atau di-emboss sesuai identitas brand." },
+  { name: "Notebook spiral full color", image: "/assets/images/products/stationery/notebook-spiral-custom.webp", price: "Mulai Rp 22.000", minimum: "100 pcs", description: "Notebook spiral dengan cover full color untuk seminar, pelatihan, sekolah, dan berbagai program promosi." },
+  { name: "Notebook organizer 6-in-1", image: "/assets/images/products/stationery/notebook-organizer-6-in-1.webp", price: "", minimum: "100 pcs", badge: "6-in-1", description: "Organizer multifungsi dengan notebook, wireless charger, phone stand, card holder, pen holder, dan document pocket." },
+  { name: "Gift set notebook & pulpen", image: "/assets/images/products/stationery/gift-set-notebook-pen.webp", price: "Mulai Rp 65.000", minimum: "50 set", badge: "Gift Set", description: "Set notebook hardcover dan pulpen metal dalam box presentasi untuk onboarding, apresiasi, atau corporate gift." },
 ];
 
 export default function FeaturesSection() {
-  return <CatalogShelf id="weekly-best" title="Souvenir paling diminati" subtitle="Pilihan praktis untuk promosi, acara, dan kebutuhan perusahaan" products={products} interactive />;
+  return <CatalogShelf id="weekly-best" title="Pulpen & notebook custom" subtitle="Alat tulis custom untuk seminar, onboarding, promosi, dan kebutuhan perusahaan" products={products} interactive />;
 }
