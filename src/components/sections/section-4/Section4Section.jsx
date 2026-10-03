@@ -10,7 +10,7 @@
   ["Gantungan Kunci & Pin", "gantungan-kunci-pin.webp", "event-kit"],
   ["Payung & Travel", "payung-travel.webp", "weekly-best"],
   ["Seminar & Event Kit", "seminar-event-kit.webp", "event-kit"],
-  ["Produk Eco", "produk-eco.webp", "corporate-gift"],
+  ["Korek Api Custom", "korek-api-custom.webp", "weekly-best"],
 ];
 
 export default function Section4Section() {
