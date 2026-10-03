@@ -1,18 +1,13 @@
 ﻿import { useEffect, useState } from "react";
 
 const slides = [
-  { desktop: "/assets/images/IDN_ECBanner_-_OCT_FURNITURE_1688x700.png", mobile: "/assets/images/7_98a31225-ae21-4398-ab84-6f441b756858_800x1005.png", label: "Souvenir custom untuk setiap kebutuhan", note: "Dari ide hingga siap dibagikan" },
-  { desktop: "/assets/images/EC_Survey-_Website_Banner_2000x830.png", mobile: "/assets/images/EC_Survey-_Website_Banner_1351x560.png", label: "Corporate gift yang berkesan", note: "Kemasan dan produk selaras dengan brand" },
-  { desktop: "/assets/images/1_23df848b-8c35-4bc0-89ec-319cdcf88807_1351x560.png", mobile: "/assets/images/1_23df848b-8c35-4bc0-89ec-319cdcf88807_1351x560.png", label: "Merchandise acara", note: "Praktis untuk seminar, pameran, dan komunitas" },
-  { desktop: "/assets/images/Main_Banners_ID_3_2000x830.jpg", mobile: "/assets/images/Main_Banners_ID_mobile_3_800x1005.jpg", label: "Selamat datang di Surya Jaya Promosindo", note: "Partner produksi souvenir custom Anda" },
-  { desktop: "/assets/images/IDN_-ECID-Main-Banners-4_1351x560.jpg", mobile: "/assets/images/IDN_-ECID-Main-Banners-4_1351x560.jpg", label: "Kualitas cetak yang konsisten", note: "Pilihan teknik cetak untuk berbagai material" },
-  { desktop: "/assets/images/IDN_ECBanner_-_OCT_FURNITURE_1351x560.png", mobile: "/assets/images/7_98a31225-ae21-4398-ab84-6f441b756858_1208x1518.png", label: "Satu katalog, banyak pilihan", note: "Tumbler, apparel, tas, alat tulis, dan lainnya" },
-  { desktop: "/assets/images/EC_Survey-_Website_Banner_1351x560.png", mobile: "/assets/images/EC_Survey-_Website_Banner_1351x560.png", label: "Konsultasi sebelum produksi", note: "Sesuaikan jumlah, bahan, warna, dan anggaran" },
-  { desktop: "/assets/images/Main_Banners_ID_3_3500x1453.jpg", mobile: "/assets/images/Main_Banners_ID_mobile_3_800x1005.jpg", label: "Souvenir yang memperkuat brand", note: "Dirancang untuk dipakai dan selalu diingat" },
-  { desktop: "/assets/images/IDN_-ECID-Main-Banners-Beddingg.jpg", mobile: "/assets/images/IDN_-ECID-Main-Banners-Beddingg.jpg", label: "Apparel custom", note: "Untuk tim, komunitas, dan program perusahaan" },
-  { desktop: "/assets/images/IDN_-ECID-Bathroom.jpg", mobile: "/assets/images/IDN_-ECID-Bathroom.jpg", label: "Seminar & event kit", note: "Paket rapi untuk peserta acara" },
-  { desktop: "/assets/images/IDN_-ECID-Main-Banners-Petss.jpg", mobile: "/assets/images/IDN_-ECID-Main-Banners-Petss.jpg", label: "Hampers perusahaan", note: "Hadiah yang terasa personal dan profesional" },
-  { desktop: "/assets/images/IDN_-ECID-Main-Banners-Curtain.jpg", mobile: "/assets/images/IDN_-ECID-Main-Banners-Curtain.jpg", label: "Kemasan custom", note: "Sentuhan akhir yang menyatukan keseluruhan paket" },
+  { desktop: "/assets/images/hero/hero-pen-office.webp", mobile: "/assets/images/hero/hero-pen-office.webp", label: "Pulpen custom untuk setiap ide", note: "Detail kecil yang selalu hadir di meja kerja" },
+  { desktop: "/assets/images/hero/hero-tumbler-office.webp", mobile: "/assets/images/hero/hero-tumbler-office.webp", label: "Tumbler untuk ritme kerja aktif", note: "Souvenir fungsional yang menemani aktivitas harian" },
+  { desktop: "/assets/images/hero/hero-tote-office.webp", mobile: "/assets/images/hero/hero-tote-office.webp", label: "Tote bag yang membawa identitas brand", note: "Praktis, reusable, dan mudah disesuaikan" },
+  { desktop: "/assets/images/hero/hero-lanyard-office.webp", mobile: "/assets/images/hero/hero-lanyard-office.webp", label: "Identitas acara yang tampil konsisten", note: "Lanyard dan ID card untuk tim maupun peserta" },
+  { desktop: "/assets/images/hero/hero-corporate-gift-office.webp", mobile: "/assets/images/hero/hero-corporate-gift-office.webp", label: "Corporate gift yang siap berkesan", note: "Produk dan kemasan dalam satu identitas visual" },
+  { desktop: "/assets/images/hero/hero-apparel-office.webp", mobile: "/assets/images/hero/hero-apparel-office.webp", label: "Apparel custom untuk tim Anda", note: "Seragam yang nyaman dengan karakter brand" },
+  { desktop: "/assets/images/hero/hero-notebook-office.webp", mobile: "/assets/images/hero/hero-notebook-office.webp", label: "Notebook untuk ide yang terus bergerak", note: "Teman rapat dengan detail custom yang profesional" },
 ];
 
 export default function Section2Section() {

@@ -104,7 +104,7 @@ body{background:#fff;color:var(--charcoal)}
 .campaign-line strong{color:var(--magenta-dark)}
 .hero-slide picture:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(52,50,56,.8) 0%,rgba(52,50,56,.5) 43%,rgba(52,50,56,.05) 78%)}
 .hero-slide picture{position:absolute;inset:0}
-.hero-slide picture img{filter:saturate(.55) brightness(.82)}
+.hero-slide picture img{filter:saturate(.82) brightness(.8)}
 .hero-copy{position:absolute;z-index:2;left:clamp(42px,7vw,110px);top:50%;width:min(540px,68%);display:flex;flex-direction:column;align-items:flex-start;text-align:left;color:#fff;transform:translateY(-50%)}
 .hero-copy img{width:74px;height:74px;margin-bottom:18px;object-fit:contain;filter:none}
 .hero-copy small{margin-bottom:10px;color:var(--yellow);font-size:12px;font-style:normal;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -139,10 +139,11 @@ body{background:#fff;color:var(--charcoal)}
   .hero-copy img{width:58px;height:58px;margin-bottom:14px}
   .hero-copy strong{font-size:36px}
   .hero-copy em{font-size:14px}
+  .hero-slide picture img{object-position:70% center}
 }
 @media(max-width:470px){
   .header-main{grid-template-columns:36px 54px 1fr}
   .brand img{width:50px;height:50px}
-  .hero-copy{left:24px;width:78%}
+  .hero-copy{left:20px;width:62%}
   .hero-copy strong{font-size:31px}
 }
