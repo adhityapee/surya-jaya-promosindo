@@ -1,13 +1,13 @@
-import { CatalogShelf } from "../features/FeaturesSection.jsx";
+﻿import { CatalogShelf } from "../features/FeaturesSection.jsx";
 
 const products = [
-  { name: "FOOT BRUSH CARE (28 X 25 X 4CM)", image: "/assets/images/771065802_220x220.jpg", price: "Rp 79.000,00", badge: "Sale" },
-  { name: "BODY WASH BRUSH CLEAR", image: "/assets/images/771065302_220x220.jpg", price: "Rp 59.000,00" },
-  { name: "BACK AND BODY BATH MESH SPONGE SOFT", image: "/assets/images/771067502_220x220.jpg", price: "Rp 49.000,00", badge: "Sale" },
-  { name: "BACK AND BODY BATH MESH SPONGE", image: "/assets/images/771067602_220x220.jpg", price: "Rp 49.000,00", badge: "Sale" },
-  { name: "BODY WASH BALL BUBBLY 2 WH", image: "/assets/images/771064402_220x220.jpg", price: "Rp 16.000,00" },
+  { name: "Paket lanyard & ID card", image: "/assets/images/771065802_220x220.jpg", price: "Mulai Rp 14.500", minimum: "100 set", badge: "Event" },
+  { name: "Goodie bag spunbond", image: "/assets/images/771065302_220x220.jpg", price: "Mulai Rp 9.500", minimum: "100 pcs" },
+  { name: "Folder seminar custom", image: "/assets/images/771067502_220x220.jpg", price: "Mulai Rp 18.000", minimum: "100 pcs" },
+  { name: "Pulpen promosi full color", image: "/assets/images/771067602_220x220.jpg", price: "Mulai Rp 5.500", minimum: "200 pcs", badge: "Hemat" },
+  { name: "Pin custom 58 mm", image: "/assets/images/771064402_220x220.jpg", price: "Mulai Rp 4.500", minimum: "100 pcs" },
 ];
 
 export default function Features5Section() {
-  return <CatalogShelf id="bath" title="Bathroom Essentials" subtitle="Pilihan praktis untuk rutinitas harian" products={products} />;
+  return <CatalogShelf id="event-kit" title="Seminar & event kit" subtitle="Perlengkapan acara yang rapi, seragam, dan siap dibagikan" products={products} />;
 }

@@ -1,27 +1,27 @@
-import { useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
 import "./styles.css";
 
 const menus = [
-  { label: "FURNITURE", groups: [["SOFAS", "1 SEATER SOFA", "2 SEATER SOFAS", "3 SEATER SOFAS", "SOFA BEDS"], ["BEDROOM", "SINGLE BEDFRAMES", "DOUBLE BEDFRAMES", "QUEEN BEDFRAMES", "DRESSERS & VANITIES"], ["LIVING ROOM", "COFFEE & ACCENT TABLES", "TV FURNITURE", "SIDEBOARD & CABINETS"], ["HOME OFFICE", "OFFICE CHAIRS & ACCESSORIES", "OFFICE DESKS & ACCESSORIES"]] },
-  { label: "KITCHEN", groups: [["COOKWARES", "POTS & PANS", "KITCHEN UTENSILS / TOOLS", "KNIVES & CUTTING BOARDS"], ["FOOD STORAGES", "FOOD CONTAINERS & CANISTERS", "WATER BOTTLES & LUNCH BOXES"], ["KITCHEN ORGANIZERS", "STORAGE & ORGANIZATION", "CART & TROLLEY ACCESSORIES"], ["SINKWARES", "DISH RACKS & DRAINER", "KITCHEN CLEANING & CARE"]] },
-  { label: "DINING", groups: [["JAPANESE TABLEWARE", "ULTRA LIGHTWEIGHT TABLEWARE", "PLATES & BOWLS"], ["TABLEWARES", "SERVEWARES", "GLASSWARE & TUMBLERS", "MUGS & CUPS"], ["DINING FURNITURE", "DINING CHAIRS & BENCH", "DINING & COUNTER TABLES"], ["TABLE ACCESSORIES", "CUTLERY", "TABLE LINENS & ACCESSORIES"]] },
-  { label: "BEDDING", groups: [["N COOL COLLECTIONS", "N COOL BED LINENS", "N COOL PILLOWS & COVERS"], ["BEDDING", "FUNCTIONAL PILLOWS", "BED PILLOWS", "COMFORTERS & QUILTS"], ["BED LINENS", "BLANKETS & THROWS", "MATTRESS PADS & PROTECTORS"], ["FAMILY", "KIDS & BABIES", "PET BEDS"]] },
-  { label: "BATH", groups: [["BATH ACCESSORIES", "BATHROOM STORAGE & ORGANIZERS", "BATH ESSENTIALS"], ["BATH FABRICS", "BATHROOM TEXTILES & MATS", "BATH TOWELS"], ["LAUNDRY", "LAUNDRY & STORAGE", "CLEANING & CARE"], ["PERSONAL CARE", "BODY WASH TOOLS", "BATHROOM SLIPPERS"]] },
-  { label: "TEXTILES", groups: [["LIVING FABRICS", "CUSHIONS & COVERS", "FLOOR CUSHIONS"], ["RUGS", "RUGS, CARPETS & ACCESSORIES", "FLOOR MATS"], ["CURTAINS", "READY MADE CURTAINS", "LACE CURTAINS"], ["HOME COMFORT", "SLIPPERS", "SEAT PADS"]] },
-  { label: "STORAGE", groups: [["LIVING & OFFICE", "STORAGE BOXES", "STORAGE BASKETS"], ["RACKS & SHELVES", "STORAGE SHELVING & RACKS", "BOOKSHELVES"], ["CLOSET & ENTRANCE", "CLOSET ORGANIZERS", "CLOSET HANGERS"], ["UTILITY", "TENSION RODS", "HOOKS & ACCESSORIES"]] },
-  { label: "DECOR", groups: [["DÉCOR", "DECORATIVE ACCESSORIES", "ARTIFICIAL PLANTS & FLOWERS"], ["MIRRORS", "WALL MIRRORS", "STANDING MIRRORS"], ["WALL DECORATIONS", "WALL SHELVES", "CLOCKS", "WALL DECOR & FRAMES"], ["FRAGRANCE", "AROMA & CANDLES", "DIFFUSERS"]] },
-  { label: "ROOM WEAR", groups: [["MEN", "MEN OUTFITS", "MEN SOCKS", "MEN UNDERWEAR"], ["WOMEN", "WOMEN OUTFITS", "WOMEN SOCKS", "WOMEN UNDERWEAR"], ["ACCESSORIES", "BAGS & ACCESSORIES", "APPEARANCE OUTFIT"], ["N COOL", "N COOL MEN OUTFITS", "N COOL WOMEN OUTFITS"]] },
-  { label: "ELECTRONICS", groups: [["SMART HOME", "SMART HOME DEVICES", "HOME APPLIANCES"], ["LIGHTING", "DESK LIGHTS", "FLOOR LIGHTS"], ["PERSONAL", "BEAUTY APPLIANCES", "SEASONAL APPLIANCES"], ["ENTERTAINMENT", "TV ACCESSORIES", "SMART DEVICES"]] },
+  { label: "TUMBLER & MUG", groups: [["TUMBLER", "TUMBLER STAINLESS", "TUMBLER PLASTIK", "BOTOL MINUM"], ["MUG", "MUG KERAMIK", "MUG ENAMEL", "MUG STAINLESS"], ["TEKNIK CETAK", "UV PRINT", "SUBLIMASI", "LASER GRAVIR"], ["KEBUTUHAN", "SOUVENIR KANTOR", "MERCHANDISE EVENT", "HAMPERS"]] },
+  { label: "APPAREL", groups: [["PAKAIAN", "KAOS CUSTOM", "POLO SHIRT", "KEMEJA KERJA"], ["OUTER", "JAKET", "HOODIE", "ROMPI"], ["HEADWEAR", "TOPI BORDIR", "TOPI SABLON", "BUCKET HAT"], ["FINISHING", "SABLON", "BORDIR KOMPUTER", "DIRECT TO FILM"]] },
+  { label: "TAS", groups: [["TOTE BAG", "TOTE BAG KANVAS", "GOODIE BAG", "SPUNBOND"], ["TAS KERJA", "BACKPACK", "LAPTOP BAG", "SELEMPANG"], ["POUCH", "POUCH KANVAS", "POUCH TRAVEL", "DOMPET KARTU"], ["CUSTOM", "LOGO SATU WARNA", "FULL COLOR", "CUSTOM PACKAGING"]] },
+  { label: "ALAT TULIS", groups: [["PENA", "PULPEN PROMOSI", "PENA METAL", "PENA ECO"], ["BUKU", "NOTEBOOK", "AGENDA", "MEMO PAD"], ["MEJA KERJA", "MOUSE PAD", "DESK CALENDAR", "CARD HOLDER"], ["PAKET", "SEMINAR KIT", "ONBOARDING KIT", "OFFICE SET"]] },
+  { label: "AKSESORIS", groups: [["GANTUNGAN KUNCI", "AKRILIK", "METAL", "KARET PVC"], ["PIN & BADGE", "PIN PENITI", "PIN MAGNET", "NAME TAG"], ["LANYARD", "TISSUE LANYARD", "POLYESTER LANYARD", "ID CARD"], ["TEKNOLOGI", "FLASHDISK", "PHONE STAND", "KABEL DATA"]] },
+  { label: "HAMPERS", groups: [["CORPORATE GIFT", "WELCOME KIT", "CLIENT GIFT", "EMPLOYEE GIFT"], ["SEASONAL", "LEBARAN", "NATAL & TAHUN BARU", "ANNIVERSARY"], ["FOODWARE", "LUNCH BOX", "CUTLERY SET", "THERMOS"], ["PACKAGING", "HARD BOX", "SLEEVE BOX", "KARTU UCAPAN"]] },
+  { label: "EVENT", groups: [["SEMINAR", "SEMINAR KIT", "ID CARD", "FOLDER DOKUMEN"], ["PAMERAN", "SHOPPING BAG", "BROSUR", "DISPLAY PROMOSI"], ["KOMUNITAS", "KAOS KOMUNITAS", "STIKER", "PIN CUSTOM"], ["AWARD", "PLAKAT AKRILIK", "MEDALI", "TROFI"]] },
+  { label: "RUMAH & GAYA", groups: [["PAYUNG", "PAYUNG LIPAT", "PAYUNG GOLF", "PAYUNG OTOMATIS"], ["HANDUK", "HANDUK BORDIR", "HANDUK OLAHRAGA", "HANDUK HOTEL"], ["RUMAH", "JAM DINDING", "BANTAL CUSTOM", "APRON"], ["TRAVEL", "TRAVEL POUCH", "NECK PILLOW", "LUGGAGE TAG"]] },
+  { label: "KEMASAN", groups: [["PAPER BAG", "KRAFT PAPER BAG", "ART CARTON BAG", "LAMINASI"], ["BOX", "HARD BOX", "CORRUGATED BOX", "FOLDING BOX"], ["POUCH", "ZIPPER POUCH", "DRAWSTRING BAG", "ECO POUCH"], ["PELENGKAP", "STIKER LABEL", "THANK YOU CARD", "TISSUE PAPER"]] },
+  { label: "CETAK PROMOSI", groups: [["MEDIA CETAK", "BROSUR", "FLYER", "KATALOG"], ["DISPLAY", "X-BANNER", "ROLL BANNER", "POSTER"], ["IDENTITAS", "KARTU NAMA", "LETTERHEAD", "AMPLOP"], ["STIKER", "VINYL", "TRANSPARAN", "DIE CUT"]] },
 ];
 
 const catalogTerms = [
-  "Fluffy Pillow N-Cool P2402",
-  "Box Pad N-Cool",
-  "Dining Table N-Collection",
-  "Hotel Style Pillow",
-  "Body Wash Brush",
-  "Kitchen Utensils",
-  "Bathroom Storage",
+  "Tumbler stainless custom",
+  "Mug keramik full color",
+  "Tote bag kanvas",
+  "Kaos sablon custom",
+  "Lanyard dan ID card",
+  "Seminar kit",
+  "Hampers perusahaan",
 ];
 
 export default function HeaderSection() {
@@ -37,16 +37,17 @@ export default function HeaderSection() {
 
   return (
     <header className="catalog-header" data-pwc-critical="header-1">
-      <div className="browser-note">Compatible with Google Chrome. Please ensure your browser is updated to the latest version.</div>
+      <div className="browser-note">Katalog digital Surya Jaya Promosindo — solusi souvenir custom untuk perusahaan, komunitas, dan acara.</div>
       <div className="header-main page-shell">
         <button className="mobile-menu-toggle" type="button" aria-label="Buka menu" aria-expanded={mobileOpen} onClick={() => setMobileOpen((value) => !value)}>
           <span /><span /><span />
         </button>
-        <a className="brand" href="/" aria-label="Nitori Indonesia">
-          <img src="/assets/images/NITORI_RGB_734x150.png" alt="NITORI" />
+        <a className="brand" href="/" aria-label="Surya Jaya Promosindo">
+          <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="Logo Surya Jaya Promosindo" />
+          <span>Surya Jaya<br />Promosindo</span>
         </a>
         <form className="catalog-search" role="search" onSubmit={submitSearch}>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} aria-label="Cari katalog" placeholder="What are you looking for?" />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} aria-label="Cari katalog" placeholder="Cari souvenir atau jenis cetak..." />
           <button type="submit" aria-label="Cari">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
           </button>
@@ -58,14 +59,14 @@ export default function HeaderSection() {
           )}
         </form>
         <div className="header-tools">
-          <div className="language"><img src="/assets/images/US_FLAG_28x21px-01.jpg" alt="" /> English <span className="caret" /></div>
-          <a className="shipping" href="#information"><span className="truck">▱</span><span><strong>Shipping Info.</strong><small>Delivery Method</small></span></a>
-          <a className="store-link" href="#stores"><span className="pin">⌖</span><span><strong>Store Location</strong><small>Find a store</small></span></a>
+          <div className="language"><span className="language-dot" /> Indonesia <span className="caret" /></div>
+          <a className="shipping" href="#information"><span className="truck">◇</span><span><strong>Info Pemesanan</strong><small>Konsultasi & produksi</small></span></a>
+          <a className="store-link" href="#stores"><span className="pin">⌖</span><span><strong>Lokasi Workshop</strong><small>Temukan kami</small></span></a>
         </div>
       </div>
 
       <div className={`navigation-wrap ${mobileOpen ? "is-mobile-open" : ""}`}>
-        <nav className="site-navigation page-shell" aria-label="Main" data-pwc-critical="navigation-1">
+        <nav className="site-navigation page-shell" aria-label="Katalog utama" data-pwc-critical="navigation-1">
           <ul className="primary-nav">
             {menus.map((menu, index) => {
               const isOpen = openMenu === index;
@@ -89,7 +90,7 @@ export default function HeaderSection() {
                           </div>
                         ))}
                       </div>
-                      <div className="mega-image"><img src={`/assets/images/${index % 2 === 0 ? "Mega_Menu-08_300x300.jpg" : "Mega_Menu_P2-08_300x300.jpg"}`} alt="Koleksi Nitori" /></div>
+                      <div className="mega-image"><img src={`/assets/images/${index % 2 === 0 ? "Mega_Menu-08_300x300.jpg" : "Mega_Menu_P2-08_300x300.jpg"}`} alt={`Inspirasi ${menu.label.toLowerCase()}`} /></div>
                     </div>
                   )}
                 </li>
@@ -97,11 +98,11 @@ export default function HeaderSection() {
             })}
           </ul>
           <div className="secondary-nav">
-            <a href="#furniture-sale">OUTLET: SUPER DISCOUNTED FURNITURE SALE</a>
-            <a className="teal" href="#weekly-best">BEST SELLING</a>
-            <a className="red" href="#clearance">WAREHOUSE CLEARANCE</a>
-            <a className="red" href="#special">OCT SPECIAL</a>
-            <a className="location-inline" href="#stores">● Store Location</a>
+            <a href="#categories">KATALOG SOUVENIR CUSTOM</a>
+            <a className="teal" href="#weekly-best">PALING DIMINATI</a>
+            <a className="red" href="#corporate-gift">CORPORATE GIFT</a>
+            <a className="red" href="#special">PAKET EVENT</a>
+            <a className="location-inline" href="#stores">● Konsultasi pesanan</a>
           </div>
         </nav>
       </div>
