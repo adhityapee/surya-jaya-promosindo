@@ -1,9 +1,25 @@
-﻿export function PromoBanner({ image, alt, href = "#categories", id, eyebrow, title, description, cta, showLogo = false }) {
+﻿export function PromoBanner({ image, alt, href = "#categories", id, eyebrow, title, description, cta, showLogo = false, badgeMark }) {
   const hasCopy = Boolean(title);
   return (
     <section className={`promo-banner content-shell ${hasCopy ? "promo-banner--story" : ""}`} id={id}>
       <a className="promo-banner__frame" href={href} aria-label={alt}>
         <img src={image} alt={alt} />
+        {badgeMark && (
+          <span
+            className="promo-banner__badge-mark"
+            style={{
+              "--badge-top": badgeMark.top,
+              "--badge-left": badgeMark.left,
+              "--badge-size": badgeMark.size,
+              "--badge-mobile-left": badgeMark.mobileLeft,
+              "--badge-mobile-bottom": badgeMark.mobileBottom,
+              "--badge-mobile-size": badgeMark.mobileSize,
+            }}
+            aria-hidden="true"
+          >
+            <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="" />
+          </span>
+        )}
         {hasCopy && (
           <span className="promo-banner__copy">
             {showLogo && <img className="promo-banner__logo" src="/assets/images/surya-jaya-promosindo-logo.webp" alt="" />}

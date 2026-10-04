@@ -1,14 +1,25 @@
-﻿import { useState } from "react";
+﻿import { PromoBanner } from "../section-5/Section5Section.jsx";
 
 export default function Section9Section() {
-  const [playing, setPlaying] = useState(false);
   return (
-    <section className="section-space content-shell">
-      <button className={`video-poster ${playing ? "is-playing" : ""}`} type="button" onClick={() => setPlaying((value) => !value)} aria-label={playing ? "Jeda inspirasi corporate gift" : "Putar inspirasi corporate gift"}>
-        <img src="/assets/images/Dining-23_1351x579.jpg" alt="Inspirasi penataan corporate gift dan tableware custom" />
-        <span className="play-button">{playing ? "Ⅱ" : "▶"}</span>
-        {playing && <span className="video-caption">Inspirasi produk • diputar</span>}
-      </button>
-    </section>
+    <PromoBanner
+      id="lanyard-lifestyle"
+      image="/assets/images/banners/lanyard-id-office-banner.webp"
+      alt="Pegawai memakai lanyard dan ID card custom saat berbincang bersama tim di kantor"
+      href="#event-kit"
+      eyebrow="LANYARD & ID CARD CUSTOM"
+      title="Identitas yang menyatukan tim"
+      description="Lanyard dan kartu identitas custom untuk kantor, seminar, event, dan kebutuhan komunitas."
+      cta="Lihat 7 pilihan produk"
+      showLogo
+      badgeMark={{
+        top: "66%",
+        left: "72.85%",
+        size: "2.5%",
+        mobileLeft: "73.5%",
+        mobileBottom: "96px",
+        mobileSize: "31px",
+      }}
+    />
   );
 }
