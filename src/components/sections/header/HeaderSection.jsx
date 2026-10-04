@@ -6,30 +6,75 @@ import { Info } from "@phosphor-icons/react/Info";
 import { MagnifyingGlass } from "@phosphor-icons/react/MagnifyingGlass";
 import { Package } from "@phosphor-icons/react/Package";
 import { Truck } from "@phosphor-icons/react/Truck";
+import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
 import { X } from "@phosphor-icons/react/X";
 import "./styles.css";
 
+const whatsappMessage = "Halo Surya Jaya Promosindo, saya ingin berkonsultasi mengenai pemesanan souvenir custom. Produk yang saya butuhkan: [nama produk]. Jumlah: [jumlah pcs]. Mohon informasinya, terima kasih.";
+const whatsappUrl = "https://wa.me/6285740386268?text=" + encodeURIComponent(whatsappMessage);
+
 const menus = [
-  { label: "TUMBLER & MUG", groups: [["TUMBLER", "TUMBLER STAINLESS", "TUMBLER PLASTIK", "BOTOL MINUM"], ["MUG", "MUG KERAMIK", "MUG ENAMEL", "MUG STAINLESS"], ["TEKNIK CETAK", "UV PRINT", "SUBLIMASI", "LASER GRAVIR"], ["KEBUTUHAN", "SOUVENIR KANTOR", "MERCHANDISE EVENT", "HAMPERS"]] },
-  { label: "APPAREL", groups: [["PAKAIAN", "KAOS CUSTOM", "POLO SHIRT", "KEMEJA KERJA"], ["OUTER", "JAKET", "HOODIE", "ROMPI"], ["HEADWEAR", "TOPI BORDIR", "TOPI SABLON", "BUCKET HAT"], ["FINISHING", "SABLON", "BORDIR KOMPUTER", "DIRECT TO FILM"]] },
-  { label: "TAS", groups: [["TOTE BAG", "TOTE BAG KANVAS", "GOODIE BAG", "SPUNBOND"], ["TAS KERJA", "BACKPACK", "LAPTOP BAG", "SELEMPANG"], ["POUCH", "POUCH KANVAS", "POUCH TRAVEL", "DOMPET KARTU"], ["CUSTOM", "LOGO SATU WARNA", "FULL COLOR", "CUSTOM PACKAGING"]] },
-  { label: "ALAT TULIS", groups: [["PENA", "PULPEN PROMOSI", "PENA METAL", "PENA ECO"], ["BUKU", "NOTEBOOK", "AGENDA", "MEMO PAD"], ["MEJA KERJA", "MOUSE PAD", "DESK CALENDAR", "CARD HOLDER"], ["PAKET", "SEMINAR KIT", "ONBOARDING KIT", "OFFICE SET"]] },
-  { label: "AKSESORIS", groups: [["GANTUNGAN KUNCI", "AKRILIK", "METAL", "KARET PVC"], ["PIN & BADGE", "PIN PENITI", "PIN MAGNET", "NAME TAG"], ["LANYARD", "TISSUE LANYARD", "POLYESTER LANYARD", "ID CARD"], ["TEKNOLOGI", "FLASHDISK", "PHONE STAND", "KABEL DATA"]] },
-  { label: "HAMPERS", groups: [["CORPORATE GIFT", "WELCOME KIT", "CLIENT GIFT", "EMPLOYEE GIFT"], ["SEASONAL", "LEBARAN", "NATAL & TAHUN BARU", "ANNIVERSARY"], ["FOODWARE", "LUNCH BOX", "CUTLERY SET", "THERMOS"], ["PACKAGING", "HARD BOX", "SLEEVE BOX", "KARTU UCAPAN"]] },
-  { label: "EVENT", groups: [["SEMINAR", "SEMINAR KIT", "ID CARD", "FOLDER DOKUMEN"], ["PAMERAN", "SHOPPING BAG", "BROSUR", "DISPLAY PROMOSI"], ["KOMUNITAS", "KAOS KOMUNITAS", "STIKER", "PIN CUSTOM"], ["AWARD", "PLAKAT AKRILIK", "MEDALI", "TROFI"]] },
-  { label: "RUMAH & GAYA", groups: [["PAYUNG", "PAYUNG LIPAT", "PAYUNG GOLF", "PAYUNG OTOMATIS"], ["HANDUK", "HANDUK BORDIR", "HANDUK OLAHRAGA", "HANDUK HOTEL"], ["RUMAH", "JAM DINDING", "BANTAL CUSTOM", "APRON"], ["TRAVEL", "TRAVEL POUCH", "NECK PILLOW", "LUGGAGE TAG"]] },
-  { label: "KEMASAN", groups: [["PAPER BAG", "KRAFT PAPER BAG", "ART CARTON BAG", "LAMINASI"], ["BOX", "HARD BOX", "CORRUGATED BOX", "FOLDING BOX"], ["POUCH", "ZIPPER POUCH", "DRAWSTRING BAG", "ECO POUCH"], ["PELENGKAP", "STIKER LABEL", "THANK YOU CARD", "TISSUE PAPER"]] },
-  { label: "CETAK PROMOSI", groups: [["MEDIA CETAK", "BROSUR", "FLYER", "KATALOG"], ["DISPLAY", "X-BANNER", "ROLL BANNER", "POSTER"], ["IDENTITAS", "KARTU NAMA", "LETTERHEAD", "AMPLOP"], ["STIKER", "VINYL", "TRANSPARAN", "DIE CUT"]] },
+  {
+    label: "TUMBLER & MUG",
+    image: "/assets/images/categories/tumbler-mug.webp",
+    groups: [["TUMBLER", "BOTOL VAKUM", "TUMBLER SEDOTAN", "BOTOL SPORT"], ["MUG", "MUG KERAMIK", "MUG ENAMEL", "TRAVEL MUG"], ["TEKNIK CETAK", "UV PRINT", "SUBLIMASI", "LASER GRAVIR"], ["COCOK UNTUK", "SOUVENIR KANTOR", "HADIAH KLIEN", "MERCHANDISE EVENT"]],
+  },
+  {
+    label: "PULPEN & NOTEBOOK",
+    image: "/assets/images/categories/pulpen-notebook.webp",
+    groups: [["PULPEN", "PULPEN PROMOSI", "PULPEN METAL", "PULPEN STYLUS"], ["NOTEBOOK", "NOTEBOOK HARDCOVER", "NOTEBOOK SPIRAL", "ORGANIZER 6-IN-1"], ["PAKET ALAT TULIS", "GIFT SET NOTEBOOK", "SEMINAR KIT", "WELCOME KIT"], ["FINISHING", "UV PRINT", "LASER GRAVIR", "EMBOSS COVER"]],
+  },
+  {
+    label: "TAS & GOODIE BAG",
+    image: "/assets/images/categories/tote-goodie-bag.webp",
+    groups: [["TOTE BAG", "TOTE BAG KANVAS", "COTTON DRILL", "TAS LIPAT"], ["GOODIE BAG", "SPUNBOND", "POLYESTER", "DRAWSTRING BAG"], ["KEMASAN", "PAPER BAG", "HARD BOX", "POUCH"], ["KEBUTUHAN", "EVENT & SEMINAR", "KEMASAN RETAIL", "SOUVENIR PERUSAHAAN"]],
+  },
+  {
+    label: "LANYARD & ID CARD",
+    image: "/assets/images/categories/lanyard-id-card.webp",
+    groups: [["LANYARD", "LANYARD TISSUE", "LANYARD POLYESTER", "LANYARD NYLON"], ["ID CARD", "KARTU PVC", "HOLDER HORIZONTAL", "HOLDER AKRILIK"], ["AKSESORIS", "BADGE REEL", "CARD HOLDER", "EVENT CREDENTIAL"], ["KEGUNAAN", "IDENTITAS KARYAWAN", "EVENT & PANITIA", "VISITOR PASS"]],
+  },
+  {
+    label: "GADGET",
+    image: "/assets/images/categories/gadget-usb.webp",
+    groups: [["KIPAS PORTABLE", "KIPAS MINI", "KIPAS LED", "KIPAS MEJA"], ["POWER BANK", "POWER BANK MAGNETIC", "KABEL TERINTEGRASI", "POWER BANK SLIM"], ["KARTU ELEKTRONIK", "BRIZZI", "TAPCASH", "E-MONEY & FLAZZ"], ["AKSESORIS GADGET", "KABEL DATA", "PHONE GRIP", "FLASHDISK"]],
+  },
+  {
+    label: "GIFT SET & HAMPERS",
+    image: "/assets/images/categories/gift-set-hampers.webp",
+    groups: [["CORPORATE GIFT", "EXECUTIVE GIFT SET", "HADIAH KLIEN", "EMPLOYEE WELCOME KIT"], ["HAMPERS", "COFFEE DESK SET", "TEA HAMPER", "ECO CORPORATE SET"], ["PACKAGING", "CUSTOM HARD BOX", "SLEEVE BOX", "KARTU UCAPAN"], ["MOMEN", "ONBOARDING", "ANNIVERSARY", "HARI RAYA & AKHIR TAHUN"]],
+  },
+  {
+    label: "EVENT KIT",
+    image: "/assets/images/categories/seminar-event-kit.webp",
+    groups: [["SEMINAR", "SEMINAR KIT", "FOLDER DOKUMEN", "LANYARD & ID CARD"], ["PAMERAN", "SHOPPING BAG", "BROSUR", "DISPLAY PROMOSI"], ["KOMUNITAS", "KAOS KOMUNITAS", "PIN CUSTOM", "STIKER"], ["AWARD", "PLAKAT AKRILIK", "MEDALI", "TROFI"]],
+  },
+  {
+    label: "APPAREL CUSTOM",
+    image: "/assets/images/categories/apparel-custom.webp",
+    groups: [["PAKAIAN", "KAOS CUSTOM", "POLO SHIRT", "KEMEJA KERJA"], ["OUTER", "JAKET", "HOODIE", "ROMPI"], ["HEADWEAR", "TOPI BORDIR", "TOPI SABLON", "BUCKET HAT"], ["FINISHING", "SABLON", "BORDIR KOMPUTER", "DIRECT TO FILM"]],
+  },
+  {
+    label: "SOUVENIR CUSTOM",
+    image: "/assets/images/categories/gantungan-kunci-pin.webp",
+    groups: [["GANTUNGAN KUNCI", "AKRILIK", "METAL", "KARET PVC"], ["SOUVENIR HARIAN", "KOREK API", "JAM DINDING", "PAYUNG"], ["DESK ITEM", "KALENDER", "MOUSE PAD", "CARD HOLDER"], ["LAYANAN CUSTOM", "FULL COLOR", "BENTUK KHUSUS", "PESANAN PARTAI BESAR"]],
+  },
+  {
+    label: "CETAK PROMOSI",
+    image: "/assets/images/categories/kalender-custom.webp",
+    groups: [["MEDIA CETAK", "BROSUR", "FLYER", "KATALOG"], ["DISPLAY PROMOSI", "X-BANNER", "ROLL BANNER", "POSTER"], ["IDENTITAS BISNIS", "KARTU NAMA", "LETTERHEAD", "AMPLOP"], ["LABEL & STIKER", "VINYL", "TRANSPARAN", "DIE CUT"]],
+  },
 ];
 
 const catalogTerms = [
-  "Tumbler stainless custom",
-  "Mug keramik full color",
-  "Tote bag kanvas",
-  "Kaos sablon custom",
+  "Tumbler dan mug custom",
+  "Pulpen dan notebook custom",
+  "Tote bag dan goodie bag",
   "Lanyard dan ID card",
-  "Seminar kit",
-  "Hampers perusahaan",
+  "Gift set dan hampers",
+  "Gadget custom",
+  "Seminar dan event kit",
+  "Cetak promosi",
 ];
 
 const languages = [
@@ -38,15 +83,16 @@ const languages = [
 ];
 
 const englishMenuTerms = {
-  "BOTOL MINUM": "WATER BOTTLES", "MUG KERAMIK": "CERAMIC MUGS", "TEKNIK CETAK": "PRINTING METHODS", SUBLIMASI: "SUBLIMATION", "LASER GRAVIR": "LASER ENGRAVING", KEBUTUHAN: "USE CASES", "SOUVENIR KANTOR": "OFFICE MERCHANDISE", "MERCHANDISE EVENT": "EVENT MERCHANDISE",
+  "BOTOL VAKUM": "VACUUM BOTTLES", "TUMBLER SEDOTAN": "STRAW TUMBLERS", "BOTOL SPORT": "SPORT BOTTLES", "MUG KERAMIK": "CERAMIC MUGS", "MUG ENAMEL": "ENAMEL MUGS", "TEKNIK CETAK": "PRINTING METHODS", SUBLIMASI: "SUBLIMATION", "LASER GRAVIR": "LASER ENGRAVING", "COCOK UNTUK": "IDEAL FOR", "SOUVENIR KANTOR": "OFFICE MERCHANDISE", "HADIAH KLIEN": "CLIENT GIFTS", "MERCHANDISE EVENT": "EVENT MERCHANDISE",
+  PULPEN: "PENS", "PULPEN PROMOSI": "PROMOTIONAL PENS", "PULPEN METAL": "METAL PENS", "PULPEN STYLUS": "STYLUS PENS", "NOTEBOOK HARDCOVER": "HARDCOVER NOTEBOOKS", "NOTEBOOK SPIRAL": "SPIRAL NOTEBOOKS", "ORGANIZER 6-IN-1": "6-IN-1 ORGANIZERS", "PAKET ALAT TULIS": "STATIONERY SETS", "GIFT SET NOTEBOOK": "NOTEBOOK GIFT SETS", "FINISHING": "FINISHING OPTIONS", "EMBOSS COVER": "COVER EMBOSSING",
+  "TOTE BAG KANVAS": "CANVAS TOTE BAGS", "COTTON DRILL": "COTTON DRILL", "TAS LIPAT": "FOLDABLE BAGS", "GOODIE BAG": "GOODIE BAGS", SPUNBOND: "SPUNBOND", POLYESTER: "POLYESTER", "KEMASAN": "PACKAGING", "KEBUTUHAN": "USE CASES", "EVENT & SEMINAR": "EVENTS & SEMINARS", "KEMASAN RETAIL": "RETAIL PACKAGING", "SOUVENIR PERUSAHAAN": "CORPORATE MERCHANDISE",
+  "LANYARD TISSUE": "TISSUE LANYARDS", "LANYARD POLYESTER": "POLYESTER LANYARDS", "LANYARD NYLON": "NYLON LANYARDS", "KARTU PVC": "PVC CARDS", "HOLDER HORIZONTAL": "HORIZONTAL HOLDERS", "HOLDER AKRILIK": "ACRYLIC HOLDERS", AKSESORIS: "ACCESSORIES", "CARD HOLDER": "CARD HOLDERS", "EVENT CREDENTIAL": "EVENT CREDENTIALS", KEGUNAAN: "USE CASES", "IDENTITAS KARYAWAN": "EMPLOYEE IDENTIFICATION", "EVENT & PANITIA": "EVENTS & COMMITTEES", "VISITOR PASS": "VISITOR PASSES",
+  "KIPAS PORTABLE": "PORTABLE FANS", "KIPAS MINI": "MINI FANS", "KIPAS LED": "LED FANS", "KIPAS MEJA": "DESK FANS", "POWER BANK MAGNETIC": "MAGNETIC POWER BANKS", "KABEL TERINTEGRASI": "BUILT-IN CABLES", "POWER BANK SLIM": "SLIM POWER BANKS", "KARTU ELEKTRONIK": "ELECTRONIC CARDS", "E-MONEY & FLAZZ": "E-MONEY & FLAZZ", "AKSESORIS GADGET": "GADGET ACCESSORIES", "KABEL DATA": "DATA CABLES", "PHONE GRIP": "PHONE GRIPS",
+  "CORPORATE GIFT": "CORPORATE GIFTS", "EXECUTIVE GIFT SET": "EXECUTIVE GIFT SETS", "EMPLOYEE WELCOME KIT": "EMPLOYEE WELCOME KITS", HAMPERS: "HAMPERS", "COFFEE DESK SET": "COFFEE DESK SETS", "TEA HAMPER": "TEA HAMPERS", "ECO CORPORATE SET": "ECO CORPORATE SETS", PACKAGING: "PACKAGING", "CUSTOM HARD BOX": "CUSTOM HARD BOXES", "KARTU UCAPAN": "GREETING CARDS", MOMEN: "OCCASIONS", ANNIVERSARY: "ANNIVERSARIES", "HARI RAYA & AKHIR TAHUN": "HOLIDAYS & YEAR-END",
+  SEMINAR: "SEMINARS", "FOLDER DOKUMEN": "DOCUMENT FOLDERS", PAMERAN: "EXHIBITIONS", "SHOPPING BAG": "SHOPPING BAGS", BROSUR: "BROCHURES", KOMUNITAS: "COMMUNITIES", "KAOS KOMUNITAS": "COMMUNITY T-SHIRTS", "PIN CUSTOM": "CUSTOM PINS", STIKER: "STICKERS", "PLAKAT AKRILIK": "ACRYLIC PLAQUES", MEDALI: "MEDALS", TROFI: "TROPHIES",
   PAKAIAN: "CLOTHING", "KAOS CUSTOM": "CUSTOM T-SHIRTS", "KEMEJA KERJA": "WORK SHIRTS", OUTER: "OUTERWEAR", JAKET: "JACKETS", ROMPI: "VESTS", "TOPI BORDIR": "EMBROIDERED CAPS", "TOPI SABLON": "PRINTED CAPS", SABLON: "SCREEN PRINTING", "BORDIR KOMPUTER": "COMPUTER EMBROIDERY",
-  "TOTE BAG KANVAS": "CANVAS TOTE BAGS", "TAS KERJA": "WORK BAGS", SELEMPANG: "SLING BAGS", "POUCH KANVAS": "CANVAS POUCHES", "DOMPET KARTU": "CARD WALLETS", "LOGO SATU WARNA": "ONE-COLOR LOGO",
-  PENA: "PENS", "PULPEN PROMOSI": "PROMOTIONAL PENS", "PENA METAL": "METAL PENS", "PENA ECO": "ECO PENS", BUKU: "BOOKS", "MEJA KERJA": "DESK ACCESSORIES", PAKET: "SETS",
-  "GANTUNGAN KUNCI": "KEYCHAINS", AKRILIK: "ACRYLIC", "KARET PVC": "PVC RUBBER", "PIN PENITI": "SAFETY PINS", "PIN MAGNET": "MAGNETIC PINS", TEKNOLOGI: "TECHNOLOGY", KABEL_DATA: "DATA CABLES",
-  LEBARAN: "EID", "NATAL & TAHUN BARU": "CHRISTMAS & NEW YEAR", "KARTU UCAPAN": "GREETING CARDS",
-  FOLDER_DOKUMEN: "DOCUMENT FOLDERS", PAMERAN: "EXHIBITIONS", BROSUR: "BROCHURES", KOMUNITAS: "COMMUNITIES", "KAOS KOMUNITAS": "COMMUNITY T-SHIRTS", STIKER: "STICKERS", "PLAKAT AKRILIK": "ACRYLIC PLAQUES", MEDALI: "MEDALS", TROFI: "TROPHIES",
-  PAYUNG: "UMBRELLAS", "PAYUNG LIPAT": "FOLDING UMBRELLAS", "PAYUNG GOLF": "GOLF UMBRELLAS", "PAYUNG OTOMATIS": "AUTOMATIC UMBRELLAS", HANDUK: "TOWELS", "HANDUK BORDIR": "EMBROIDERED TOWELS", "HANDUK OLAHRAGA": "SPORT TOWELS", "HANDUK HOTEL": "HOTEL TOWELS", RUMAH: "HOME", "JAM DINDING": "WALL CLOCKS", "BANTAL CUSTOM": "CUSTOM CUSHIONS",
-  LAMINASI: "LAMINATION", PELENGKAP: "ACCESSORIES", "STIKER LABEL": "LABEL STICKERS", "MEDIA CETAK": "PRINTED MEDIA", KATALOG: "CATALOGS", IDENTITAS: "BRAND IDENTITY", "KARTU NAMA": "BUSINESS CARDS", AMPLOP: "ENVELOPES", TRANSPARAN: "TRANSPARENT",
+  "GANTUNGAN KUNCI": "KEYCHAINS", AKRILIK: "ACRYLIC", "KARET PVC": "PVC RUBBER", "SOUVENIR HARIAN": "EVERYDAY MERCHANDISE", "KOREK API": "LIGHTERS", "JAM DINDING": "WALL CLOCKS", PAYUNG: "UMBRELLAS", "DESK ITEM": "DESK ITEMS", KALENDER: "CALENDARS", "MOUSE PAD": "MOUSE PADS", "LAYANAN CUSTOM": "CUSTOM SERVICES", "BENTUK KHUSUS": "CUSTOM SHAPES", "PESANAN PARTAI BESAR": "BULK ORDERS",
+  "MEDIA CETAK": "PRINTED MEDIA", KATALOG: "CATALOGS", "DISPLAY PROMOSI": "PROMOTIONAL DISPLAYS", "IDENTITAS BISNIS": "BUSINESS IDENTITY", "KARTU NAMA": "BUSINESS CARDS", AMPLOP: "ENVELOPES", "LABEL & STIKER": "LABELS & STICKERS", TRANSPARAN: "TRANSPARENT",
 };
 
 const translateMenuTerm = (term, language) => language === "en" ? (englishMenuTerms[term] || englishMenuTerms[term.replaceAll(" ", "_")] || term) : term;
@@ -81,9 +127,12 @@ const headerCopy = {
     courierTitle: "Mitra pengiriman",
     courierNote: "Melayani pengiriman nasional. Pilihan instant dapat dikoordinasikan untuk wilayah dan ukuran pesanan yang memenuhi ketentuan.",
     orderFootnote: "Biaya pengiriman dihitung berdasarkan alamat tujuan, berat, dimensi, dan jumlah koli, lalu dikonfirmasi sebelum pengiriman.",
-    contact: "Lihat informasi kontak",
-    menuLabels: ["TUMBLER & MUG", "APPAREL", "TAS", "ALAT TULIS", "AKSESORIS", "HAMPERS", "EVENT", "RUMAH & GAYA", "KEMASAN", "CETAK PROMOSI"],
-    secondary: ["KATALOG SOUVENIR CUSTOM", "PALING DIMINATI", "CORPORATE GIFT", "PAKET EVENT", "Konsultasi pesanan"],
+    contact: "Lihat lokasi toko",
+    phoneLabel: "Telepon 0857 4038 6268",
+    whatsappLabel: "Chat WhatsApp",
+    whatsappAria: "Hubungi Surya Jaya Promosindo melalui WhatsApp",
+    menuLabels: ["TUMBLER & MUG", "PULPEN & NOTEBOOK", "TAS & GOODIE BAG", "LANYARD & ID CARD", "GADGET", "GIFT SET & HAMPERS", "EVENT KIT", "APPAREL CUSTOM", "SOUVENIR CUSTOM", "CETAK PROMOSI"],
+    secondary: ["KATALOG SOUVENIR CUSTOM", "PALING DIMINATI", "CORPORATE GIFT", "PAKET EVENT", "Lokasi Toko"],
   },
   en: {
     browserNote: "Surya Jaya Promosindo digital catalog: custom merchandise for companies, communities, and events.",
@@ -112,13 +161,16 @@ const headerCopy = {
     courierTitle: "Delivery partners",
     courierNote: "Nationwide delivery is available. Instant services can be coordinated for eligible areas and order sizes.",
     orderFootnote: "Shipping fees are calculated from the destination, weight, dimensions, and number of packages, then confirmed before dispatch.",
-    contact: "View contact information",
-    menuLabels: ["TUMBLER & MUG", "APPAREL", "BAGS", "STATIONERY", "ACCESSORIES", "HAMPERS", "EVENT", "HOME & LIFESTYLE", "PACKAGING", "PROMOTIONAL PRINT"],
-    secondary: ["CUSTOM MERCHANDISE CATALOG", "MOST POPULAR", "CORPORATE GIFTS", "EVENT PACKAGES", "Order consultation"],
+    contact: "View store locations",
+    phoneLabel: "Call 0857 4038 6268",
+    whatsappLabel: "WhatsApp Us",
+    whatsappAria: "Contact Surya Jaya Promosindo on WhatsApp",
+    menuLabels: ["TUMBLERS & MUGS", "PENS & NOTEBOOKS", "BAGS & GOODIE BAGS", "LANYARDS & ID CARDS", "GADGETS", "GIFT SETS & HAMPERS", "EVENT KITS", "CUSTOM APPAREL", "CUSTOM MERCHANDISE", "PROMOTIONAL PRINT"],
+    secondary: ["CUSTOM MERCHANDISE CATALOG", "MOST POPULAR", "CORPORATE GIFTS", "EVENT PACKAGES", "Store Locations"],
   },
 };
 
-export default function HeaderSection() {
+export default function HeaderSection({ hideStoreLocationLink = false }) {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
@@ -256,6 +308,10 @@ export default function HeaderSection() {
             <Truck className="delivery-icon" size={29} weight="regular" aria-hidden="true" />
             <span><strong>{copy.orderTitle}</strong><small>{copy.orderSubtitle}</small></span>
           </button>
+          <a className="header-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}>
+            <WhatsappLogo size={21} weight="fill" aria-hidden="true" />
+            <span>{copy.whatsappLabel}</span>
+          </a>
         </div>
       </div>
 
@@ -290,7 +346,13 @@ export default function HeaderSection() {
             <p>{copy.courierNote}</p>
             <div className="courier-list" aria-label={copy.courierTitle}>{shippingPartners.map((partner) => <span key={partner}>{partner}</span>)}</div>
           </div>
-          <div className="order-panel-footer"><p>{copy.orderFootnote}</p><a href="#information" onClick={() => setOpenUtility(null)}>{copy.contact}</a></div>
+          <div className="order-panel-footer">
+            <p>{copy.orderFootnote}</p>
+            <div className="order-panel-actions">
+              <a href="tel:+6285740386268">{copy.phoneLabel}</a>
+              <a href="/id/pages/lokasi-toko" onClick={() => setOpenUtility(null)}>{copy.contact}</a>
+            </div>
+          </div>
         </aside>
       )}
 
@@ -298,6 +360,7 @@ export default function HeaderSection() {
         <div className="mobile-utility-bar page-shell">
           <button type="button" aria-expanded={openUtility === "language"} aria-controls="language-panel" onClick={() => toggleUtility("language")}><GlobeHemisphereWest size={20} weight="regular" aria-hidden="true" />{copy.currentLanguage}<CaretDown size={13} weight="bold" aria-hidden="true" /></button>
           <button type="button" aria-expanded={openUtility === "order"} aria-controls="order-panel" onClick={() => toggleUtility("order")}><Truck size={22} weight="regular" aria-hidden="true" />{copy.orderTitle}</button>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}><WhatsappLogo size={20} weight="fill" aria-hidden="true" />WhatsApp</a>
         </div>
         <nav className="site-navigation page-shell" aria-label={copy.navLabel} data-pwc-critical="navigation-1">
           <ul className="primary-nav">
@@ -342,7 +405,7 @@ export default function HeaderSection() {
                           </div>
                         ))}
                       </div>
-                      <div className="mega-image"><img src={`/assets/images/${index % 2 === 0 ? "Mega_Menu-08_300x300.jpg" : "Mega_Menu_P2-08_300x300.jpg"}`} alt={`${copy.inspiration} ${copy.menuLabels[index].toLowerCase()}`} /></div>
+                      <div className="mega-image"><img src={menu.image} alt={`${copy.inspiration} ${copy.menuLabels[index].toLowerCase()}`} /></div>
                     </div>
                   )}
                 </li>
@@ -354,7 +417,7 @@ export default function HeaderSection() {
             <a className="teal" href="#weekly-best">{copy.secondary[1]}</a>
             <a className="red" href="#corporate-gift">{copy.secondary[2]}</a>
             <a className="red" href="#special">{copy.secondary[3]}</a>
-            <a className="location-inline" href="#stores">{copy.secondary[4]}</a>
+            {!hideStoreLocationLink && <a className="location-inline" href="/id/pages/lokasi-toko">{copy.secondary[4]}</a>}
           </div>
         </nav>
       </div>

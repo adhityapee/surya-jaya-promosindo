@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 
 export function CatalogShelf({ title, subtitle, products, id, interactive = false }) {
   const [offset, setOffset] = useState(0);
@@ -52,7 +52,7 @@ const products = [
   { name: "Pulpen stylus 2-in-1", image: "/assets/images/products/stationery/pulpen-stylus-2-in-1.webp", price: "Mulai Rp 13.500", minimum: "100 pcs", badge: "Multifungsi", description: "Pulpen metal dua fungsi dengan ujung stylus untuk layar sentuh, cocok sebagai merchandise kerja yang praktis." },
   { name: "Notebook A5 hardcover custom", image: "/assets/images/products/stationery/notebook-a5-hardcover.webp", price: "Mulai Rp 32.000", minimum: "50 pcs", badge: "Favorit", description: "Notebook hardcover A5 dengan elastic closure dan ribbon bookmark yang dapat dicetak atau di-emboss sesuai identitas brand." },
   { name: "Notebook spiral full color", image: "/assets/images/products/stationery/notebook-spiral-custom.webp", price: "Mulai Rp 22.000", minimum: "100 pcs", description: "Notebook spiral dengan cover full color untuk seminar, pelatihan, sekolah, dan berbagai program promosi." },
-  { name: "Notebook organizer 6-in-1", image: "/assets/images/products/stationery/notebook-organizer-6-in-1.webp", price: "", minimum: "100 pcs", badge: "6-in-1", description: "Organizer multifungsi dengan notebook, wireless charger, phone stand, card holder, pen holder, dan document pocket." },
+  { name: "Notebook organizer 6-in-1", image: "/assets/images/products/stationery/notebook-organizer-6-in-1.webp", price: "", minimum: "100 pcs", badge: "6-in-1", description: "Organizer multifungsi dengan notebook, slot penyimpanan handphone, slot kartu nama, pen holder, saku dokumen, dan kantong aksesori beritsleting." },
   { name: "Gift set notebook & pulpen", image: "/assets/images/products/stationery/gift-set-notebook-pen.webp", price: "Mulai Rp 65.000", minimum: "50 set", badge: "Gift Set", description: "Set notebook hardcover dan pulpen metal dalam box presentasi untuk onboarding, apresiasi, atau corporate gift." },
 ];
 
