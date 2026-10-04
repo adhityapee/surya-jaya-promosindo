@@ -1,5 +1,18 @@
 ﻿import { useState } from "react";
 
+function ProductBrandMark({ mark, modal = false }) {
+  if (!mark) return null;
+  return (
+    <span
+      className={`product-brand-mark ${modal ? "product-brand-mark--modal" : ""}`}
+      style={{ "--brand-top": mark.top, "--brand-left": mark.left, "--brand-size": mark.size }}
+      aria-hidden="true"
+    >
+      <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="" />
+    </span>
+  );
+}
+
 export function CatalogShelf({ title, subtitle, products, id, interactive = false }) {
   const [offset, setOffset] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -18,7 +31,11 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
         <div className="product-track" style={{ transform: `translateX(-${offset * 20}%)` }}>
           {products.map((product, index) => (
             <article className="product-card" key={`${product.name}-${index}`}>
-              <div className="product-image"><img src={product.image} alt={product.name} />{product.badge && <span className="product-badge">{product.badge}</span>}</div>
+              <div className="product-image">
+                <img src={product.image} alt={product.name} />
+                <ProductBrandMark mark={product.brandMark} />
+                {product.badge && <span className="product-badge">{product.badge}</span>}
+              </div>
               <h3 className="product-name">{product.name}</h3>
               <small className="product-tax">Minimum order: {product.minimum || "50 pcs"}</small>
               {product.price && <div className="product-price">{product.price}</div>}
@@ -32,7 +49,10 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
         <div className="modal-backdrop" role="presentation" onMouseDown={() => setSelected(null)}>
           <article className="product-modal" role="dialog" aria-modal="true" aria-label={selected.name} onMouseDown={(event) => event.stopPropagation()}>
             <button className="modal-close" type="button" onClick={() => setSelected(null)} aria-label="Tutup">×</button>
-            <img src={selected.image} alt={selected.name} />
+            <div className="product-modal__visual">
+              <img src={selected.image} alt={selected.name} />
+              <ProductBrandMark mark={selected.brandMark} modal />
+            </div>
             <div className="product-modal__copy"><span className="image-product__eyebrow">KATALOG SOUVENIR</span><h3>{selected.name}</h3><p>{selected.description || "Produk dapat disesuaikan dengan logo, warna, dan kebutuhan acara Anda. Hubungi tim Surya Jaya Promosindo untuk pilihan bahan serta teknik cetak."}</p>{selected.price && <strong>{selected.price}</strong>}<p className="stock">{selected.stock || "Bisa custom logo"}</p></div>
           </article>
         </div>

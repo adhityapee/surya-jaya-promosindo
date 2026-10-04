@@ -474,3 +474,56 @@ body{background:#fff;color:var(--charcoal)}
 @media(prefers-reduced-motion:reduce){
   .promo-banner__copy em span{transition:none}
 }
+/* Branded drinkware shelf */
+[data-pwc-section="features-2"] .shelf{padding-bottom:20px}
+[data-pwc-section="section-7"] .promo-banner--story{padding-top:0}
+.product-brand-mark{
+  position:absolute;
+  z-index:2;
+  top:var(--brand-top,55%);
+  left:var(--brand-left,50%);
+  width:var(--brand-size,14%);
+  aspect-ratio:1;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:transform .35s;
+  filter:drop-shadow(0 1px 1px rgba(30,30,32,.18));
+}
+.product-image .product-brand-mark img,
+.product-modal .product-brand-mark img{
+  width:100%;
+  height:100%;
+  min-height:0;
+  max-height:none;
+  object-fit:contain;
+  background:transparent;
+  transform:none;
+}
+.product-card:hover .product-brand-mark{
+  transform:translate(-50%,-50%) scale(1.035);
+}
+.product-card:hover .product-brand-mark img{
+  transform:none;
+}
+.product-modal__visual{
+  position:relative;
+  min-height:350px;
+  overflow:hidden;
+  background:#f7f7f7;
+}
+.product-modal__visual>img{
+  width:100%;
+  height:100%;
+  min-height:350px;
+  object-fit:contain;
+  background:#f7f7f7;
+}
+@media(max-width:760px){
+  [data-pwc-section="features-2"] .shelf{padding-bottom:16px}
+  [data-pwc-section="section-7"] .promo-banner--story{padding-top:0}
+  .product-modal__visual{height:250px;min-height:0}
+  .product-modal__visual>img{height:250px;min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .product-brand-mark{transition:none}
+}
