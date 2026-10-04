@@ -6,11 +6,11 @@ const whatsappMessage = "Halo Surya Jaya Promosindo, saya ingin berkonsultasi me
 const whatsappUrl = `https://wa.me/6285740386268?text=${encodeURIComponent(whatsappMessage)}`;
 
 const information = [
-  { label: "Katalog produk", href: "/#categories" },
-  { label: "Produk paling diminati", href: "/#weekly-best" },
-  { label: "Gift set perusahaan", href: "/#corporate-gift" },
+  { label: "Katalog produk", href: "/products#categories" },
+  { label: "Produk paling diminati", href: "/products#weekly-best" },
+  { label: "Gift set perusahaan", href: "/products#corporate-gift" },
   { label: "Informasi pemesanan", href: whatsappUrl, external: true },
-  { label: "Pengiriman seluruh Indonesia", href: "/#information" },
+  { label: "Pengiriman seluruh Indonesia", href: "/products#information" },
   { label: "Lokasi toko", href: "/id/pages/lokasi-toko" },
 ];
 const company = [
@@ -20,12 +20,12 @@ const company = [
   { label: "Telepon 0857 4038 6268", href: "tel:+6285740386268" },
 ];
 const services = [
-  { label: "Tumbler & mug custom", href: "/#drinkware" },
-  { label: "Pulpen & notebook custom", href: "/#weekly-best" },
-  { label: "Tote bag & goodie bag", href: "/#bags" },
-  { label: "Lanyard & ID card", href: "/#event-kit" },
-  { label: "Gift set & hampers", href: "/#corporate-gift" },
-  { label: "Gadget custom", href: "/#gadget-custom" },
+  { label: "Tumbler & mug custom", href: "/products#drinkware" },
+  { label: "Pulpen & notebook custom", href: "/products#weekly-best" },
+  { label: "Tote bag & goodie bag", href: "/products#bags" },
+  { label: "Lanyard & ID card", href: "/products#event-kit" },
+  { label: "Gift set & hampers", href: "/products#corporate-gift" },
+  { label: "Gadget custom", href: "/products#gadget-custom" },
 ];
 
 function FooterLink({ item }) {

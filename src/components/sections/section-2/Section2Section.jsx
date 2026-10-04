@@ -16,7 +16,7 @@ const slides = [
 export default function Section2Section() {
   const [active, setActive] = useState(0);
   useEffect(() => {
-    const timer = window.setInterval(() => setActive((value) => (value + 1) % slides.length), 6500);
+    const timer = window.setInterval(() => setActive((value) => (value + 1) % slides.length), 9500);
     return () => window.clearInterval(timer);
   }, []);
   const go = (next) => setActive((next + slides.length) % slides.length);

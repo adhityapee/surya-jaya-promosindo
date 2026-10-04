@@ -180,6 +180,11 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
     try { return window.localStorage.getItem("sjp-language") === "en" ? "en" : "id"; } catch { return "id"; }
   });
   const copy = headerCopy[language];
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const primaryLinks = [
+    { href: "/", label: "Home", active: currentPath === "/" },
+    { href: "/products", label: "Products", active: currentPath === "/products" },
+  ];
   const headerRef = useRef(null);
   const scrollSentinelRef = useRef(null);
   const closeTimerRef = useRef(null);
@@ -261,7 +266,11 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
 
   const submitSearch = (event) => {
     event.preventDefault();
-    document.querySelector("[data-pwc-section='features']")?.scrollIntoView({ behavior: "smooth" });
+    if (currentPath === "/products") {
+      document.querySelector("[data-pwc-section='features']")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    window.location.assign("/products#weekly-best");
   };
 
   return (
@@ -356,12 +365,15 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
         </aside>
       )}
 
-      <div className={`navigation-wrap ${mobileOpen ? "is-mobile-open" : ""}`}>
+      <div className={`navigation-wrap simple-navigation-wrap ${mobileOpen ? "is-mobile-open" : ""}`}>
         <div className="mobile-utility-bar page-shell">
           <button type="button" aria-expanded={openUtility === "language"} aria-controls="language-panel" onClick={() => toggleUtility("language")}><GlobeHemisphereWest size={20} weight="regular" aria-hidden="true" />{copy.currentLanguage}<CaretDown size={13} weight="bold" aria-hidden="true" /></button>
           <button type="button" aria-expanded={openUtility === "order"} aria-controls="order-panel" onClick={() => toggleUtility("order")}><Truck size={22} weight="regular" aria-hidden="true" />{copy.orderTitle}</button>
           <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}><WhatsappLogo size={20} weight="fill" aria-hidden="true" />WhatsApp</a>
         </div>
+        <nav className="simple-primary-nav page-shell" aria-label={copy.navLabel}>
+          {primaryLinks.map((item) => <a href={item.href} aria-current={item.active ? "page" : undefined} key={item.href}>{item.label}</a>)}
+        </nav>
         <nav className="site-navigation page-shell" aria-label={copy.navLabel} data-pwc-critical="navigation-1">
           <ul className="primary-nav">
             {menus.map((menu, index) => {
