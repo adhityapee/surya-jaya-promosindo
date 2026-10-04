@@ -114,6 +114,8 @@ body{background:#fff;color:var(--charcoal)}
 .catalog-button:active{transform:translateY(1px)}
 .category-card img{border:4px solid transparent;box-shadow:0 0 0 1px var(--border);transition:border-color .2s,transform .2s}
 .category-card:hover img{border-color:var(--yellow);transform:translateY(-3px)}
+.category-card--static:hover{color:inherit}
+.category-card--static:hover img{border-color:transparent;transform:none}
 .product-badge{background:var(--yellow);color:var(--charcoal)}
 .product-card{border-color:var(--border)}
 .product-card:first-child{border-color:var(--border)}
