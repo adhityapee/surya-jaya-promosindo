@@ -86,7 +86,7 @@ export default function HomePage() {
             <a className="home-text-link" href={whatsappUrl} target="_blank" rel="noreferrer">Diskusikan kebutuhan Anda<ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
           </div>
           <div className="home-process__media">
-            <video controls playsInline preload="metadata" poster="https://images.pexels.com/videos/34888657/pexels-photo-34888657.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260">
+            <video autoPlay muted loop controls playsInline preload="metadata" poster="https://images.pexels.com/videos/34888657/pexels-photo-34888657.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260">
               <source src={processVideo} type="video/mp4" />
               Browser Anda belum mendukung pemutaran video.
             </video>

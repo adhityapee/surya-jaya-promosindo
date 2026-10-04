@@ -89,7 +89,7 @@ body{background:#fff;color:var(--charcoal)}
 .browser-note{background:var(--charcoal);color:#fff}
 .header-main{grid-template-columns:210px minmax(300px,600px) 1fr}
 .brand{display:flex;align-items:center;gap:11px;color:var(--charcoal);font-size:13px;font-weight:700;line-height:1.05;text-transform:uppercase;letter-spacing:.035em}
-.brand img{width:66px;height:66px;object-fit:contain}
+.brand img{width:48px;height:48px;object-fit:contain}
 .catalog-search{border-color:#e5c8d9;box-shadow:0 3px 12px rgba(156,47,111,.09)}
 .catalog-search>button{background:var(--yellow);color:var(--charcoal)}
 .catalog-search>button:hover{background:#e7c31c}
@@ -132,7 +132,7 @@ body{background:#fff;color:var(--charcoal)}
 @media(max-width:760px){
   .header-main{grid-template-columns:40px 66px 1fr}
   .brand span{display:none}
-  .brand img{width:58px;height:58px}
+  .brand img{width:48px;height:48px}
   .hero-copy{left:30px;width:72%}
   .hero-copy strong{font-size:36px}
   .hero-copy em{font-size:14px}
@@ -140,7 +140,7 @@ body{background:#fff;color:var(--charcoal)}
 }
 @media(max-width:470px){
   .header-main{grid-template-columns:36px 54px 1fr}
-  .brand img{width:50px;height:50px}
+  .brand img{width:48px;height:48px}
   .hero-copy{left:20px;width:62%}
   .hero-copy strong{font-size:31px}
 }

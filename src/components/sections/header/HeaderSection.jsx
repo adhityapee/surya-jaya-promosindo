@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CaretDown } from "@phosphor-icons/react/CaretDown";
-import { Check } from "@phosphor-icons/react/Check";
-import { GlobeHemisphereWest } from "@phosphor-icons/react/GlobeHemisphereWest";
 import { Info } from "@phosphor-icons/react/Info";
 import { MagnifyingGlass } from "@phosphor-icons/react/MagnifyingGlass";
 import { Package } from "@phosphor-icons/react/Package";
@@ -77,11 +75,6 @@ const catalogTerms = [
   "Cetak promosi",
 ];
 
-const languages = [
-  { code: "id", short: "ID", label: { id: "Indonesia", en: "Indonesian" }, description: { id: "Bahasa Indonesia", en: "Bahasa Indonesia" } },
-  { code: "en", short: "EN", label: { id: "Inggris", en: "English" }, description: { id: "English", en: "English" } },
-];
-
 const englishMenuTerms = {
   "BOTOL VAKUM": "VACUUM BOTTLES", "TUMBLER SEDOTAN": "STRAW TUMBLERS", "BOTOL SPORT": "SPORT BOTTLES", "MUG KERAMIK": "CERAMIC MUGS", "MUG ENAMEL": "ENAMEL MUGS", "TEKNIK CETAK": "PRINTING METHODS", SUBLIMASI: "SUBLIMATION", "LASER GRAVIR": "LASER ENGRAVING", "COCOK UNTUK": "IDEAL FOR", "SOUVENIR KANTOR": "OFFICE MERCHANDISE", "HADIAH KLIEN": "CLIENT GIFTS", "MERCHANDISE EVENT": "EVENT MERCHANDISE",
   PULPEN: "PENS", "PULPEN PROMOSI": "PROMOTIONAL PENS", "PULPEN METAL": "METAL PENS", "PULPEN STYLUS": "STYLUS PENS", "NOTEBOOK HARDCOVER": "HARDCOVER NOTEBOOKS", "NOTEBOOK SPIRAL": "SPIRAL NOTEBOOKS", "ORGANIZER 6-IN-1": "6-IN-1 ORGANIZERS", "PAKET ALAT TULIS": "STATIONERY SETS", "GIFT SET NOTEBOOK": "NOTEBOOK GIFT SETS", "FINISHING": "FINISHING OPTIONS", "EMBOSS COVER": "COVER EMBOSSING",
@@ -110,6 +103,8 @@ const headerCopy = {
     closePanel: "Tutup informasi",
     inspiration: "Inspirasi",
     navLabel: "Katalog utama",
+    homeLabel: "Beranda",
+    productsLabel: "Produk",
     currentLanguage: "Indonesia",
     languageAria: "Pilih bahasa",
     languageTitle: "Pilih bahasa tampilan",
@@ -144,6 +139,8 @@ const headerCopy = {
     closePanel: "Close information",
     inspiration: "Inspiration",
     navLabel: "Main catalog",
+    homeLabel: "Home",
+    productsLabel: "Products",
     currentLanguage: "English",
     languageAria: "Select language",
     languageTitle: "Select display language",
@@ -176,14 +173,12 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
   const [isCompact, setIsCompact] = useState(false);
   const [query, setQuery] = useState("");
   const [openUtility, setOpenUtility] = useState(null);
-  const [language, setLanguage] = useState(() => {
-    try { return window.localStorage.getItem("sjp-language") === "en" ? "en" : "id"; } catch { return "id"; }
-  });
-  const copy = headerCopy[language];
+  const language = "id";
+  const copy = headerCopy.id;
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
   const primaryLinks = [
-    { href: "/", label: "Home", active: currentPath === "/" },
-    { href: "/products", label: "Products", active: currentPath === "/products" },
+    { href: "/", label: copy.homeLabel, active: currentPath === "/" },
+    { href: "/products", label: copy.productsLabel, active: currentPath === "/products" },
   ];
   const headerRef = useRef(null);
   const scrollSentinelRef = useRef(null);
@@ -192,9 +187,9 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
   const suggestions = useMemo(() => query.trim() ? catalogTerms.filter((term) => term.toLowerCase().includes(query.toLowerCase())).slice(0, 5) : [], [query]);
 
   useEffect(() => {
-    document.documentElement.lang = language;
-    try { window.localStorage.setItem("sjp-language", language); } catch { /* Storage may be disabled by the browser. */ }
-  }, [language]);
+    document.documentElement.lang = "id";
+    try { window.localStorage.removeItem("sjp-language"); } catch { /* Storage may be disabled by the browser. */ }
+  }, []);
 
   useEffect(() => {
     const sentinel = scrollSentinelRef.current;
@@ -259,11 +254,6 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
     setOpenUtility((current) => current === panel ? null : panel);
   };
 
-  const selectLanguage = (code) => {
-    setLanguage(code);
-    setOpenUtility(null);
-  };
-
   const submitSearch = (event) => {
     event.preventDefault();
     if (currentPath === "/products") {
@@ -308,11 +298,6 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
           )}
         </form>
         <div className="header-tools">
-          <button className={`language utility-trigger ${openUtility === "language" ? "is-open" : ""}`} type="button" aria-expanded={openUtility === "language"} aria-controls="language-panel" aria-label={copy.languageAria} onClick={() => toggleUtility("language")}>
-            <GlobeHemisphereWest size={21} weight="regular" aria-hidden="true" />
-            <span>{copy.currentLanguage}</span>
-            <CaretDown className="utility-caret" size={14} weight="bold" aria-hidden="true" />
-          </button>
           <button className={`shipping utility-trigger ${openUtility === "order" ? "is-open" : ""}`} type="button" aria-expanded={openUtility === "order"} aria-controls="order-panel" aria-label={copy.orderAria} onClick={() => toggleUtility("order")}>
             <Truck className="delivery-icon" size={29} weight="regular" aria-hidden="true" />
             <span><strong>{copy.orderTitle}</strong><small>{copy.orderSubtitle}</small></span>
@@ -323,19 +308,6 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
           </a>
         </div>
       </div>
-
-      {openUtility === "language" && (
-        <div className="header-utility-panel language-panel" id="language-panel" role="menu" aria-label={copy.languageTitle}>
-          <strong className="utility-panel-title">{copy.languageTitle}</strong>
-          {languages.map((item) => (
-            <button className={language === item.code ? "is-selected" : ""} type="button" role="menuitemradio" aria-checked={language === item.code} key={item.code} onClick={() => selectLanguage(item.code)}>
-              <span className="language-code">{item.short}</span>
-              <span><b>{item.label[language]}</b><small>{item.description[language]}</small></span>
-              {language === item.code && <Check size={18} weight="bold" aria-hidden="true" />}
-            </button>
-          ))}
-        </div>
-      )}
 
       {openUtility === "order" && (
         <aside className="header-utility-panel order-panel" id="order-panel" aria-labelledby="order-panel-title">
@@ -367,7 +339,6 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
 
       <div className={`navigation-wrap simple-navigation-wrap ${mobileOpen ? "is-mobile-open" : ""}`}>
         <div className="mobile-utility-bar page-shell">
-          <button type="button" aria-expanded={openUtility === "language"} aria-controls="language-panel" onClick={() => toggleUtility("language")}><GlobeHemisphereWest size={20} weight="regular" aria-hidden="true" />{copy.currentLanguage}<CaretDown size={13} weight="bold" aria-hidden="true" /></button>
           <button type="button" aria-expanded={openUtility === "order"} aria-controls="order-panel" onClick={() => toggleUtility("order")}><Truck size={22} weight="regular" aria-hidden="true" />{copy.orderTitle}</button>
           <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}><WhatsappLogo size={20} weight="fill" aria-hidden="true" />WhatsApp</a>
         </div>
