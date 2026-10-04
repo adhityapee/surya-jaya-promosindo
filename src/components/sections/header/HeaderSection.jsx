@@ -95,7 +95,7 @@ export default function HeaderSection() {
   return (
     <>
       <span className="header-scroll-sentinel" ref={scrollSentinelRef} aria-hidden="true" />
-      <div className="browser-note">Katalog digital Surya Jaya Promosindo — solusi souvenir custom untuk perusahaan, komunitas, dan acara.</div>
+      <div className="browser-note">Katalog digital Surya Jaya Promosindo: solusi souvenir custom untuk perusahaan, komunitas, dan acara.</div>
       <header ref={headerRef} className={`catalog-header ${isCompact ? "is-compact" : ""}`} data-pwc-critical="header-1">
       <div className="header-main page-shell">
         <button

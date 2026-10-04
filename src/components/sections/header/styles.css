@@ -364,7 +364,7 @@ body{background:#fff;color:var(--charcoal)}
 .primary-nav>li.is-open>.mega-menu .mega-columns>div:nth-child(4){animation-delay:.095s}
 .primary-nav>li.is-open>.mega-menu .mega-image{animation-delay:.115s}
 /* Stationery lifestyle banner */
-.shelf[id]{scroll-margin-top:216px}
+.shelf[id]{scroll-margin-top:75px}
 [data-pwc-section="features"] .shelf{padding-bottom:20px}
 [data-pwc-section="section-5"] .promo-banner--story{padding-top:0}
 .promo-banner--story .promo-banner__frame{
@@ -559,4 +559,50 @@ body{background:#fff;color:var(--charcoal)}
     width:var(--badge-mobile-size);
     transform:translateX(-50%);
   }
+}
+/* Product stories and customer testimonials */
+[data-pwc-section="features-3"] .shelf,
+[data-pwc-section="features-4"] .shelf,
+[data-pwc-section="features-5"] .shelf{padding-bottom:20px}
+[data-pwc-section="section-10"] .promo-banner--story,
+[data-pwc-section="section-11"] .promo-banner--story,
+[data-pwc-section="section-12"] .promo-banner--story{padding-top:0}
+.testimonials{padding:74px 0 82px}
+.testimonials__header{max-width:680px;margin-bottom:34px}
+.testimonials__header h2{margin:0 0 10px;font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.03em}
+.testimonials__header p{margin:0;color:#666;line-height:1.6}
+.testimonials__body{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(390px,.9fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.testimonial-feature{position:relative;min-height:390px;display:flex;flex-direction:column;justify-content:center;padding:54px 7vw 54px 40px;border-right:1px solid var(--border)}
+.testimonial-feature>img{position:absolute;right:36px;top:34px;width:64px;height:64px;object-fit:contain;opacity:.18}
+.testimonial-stars{color:#d5a900;font-size:18px;letter-spacing:.12em}
+.testimonial-feature blockquote{max-width:740px;margin:24px 0 30px;font-size:clamp(24px,2.3vw,35px);line-height:1.28;letter-spacing:-.02em}
+.testimonial-feature footer{display:flex;flex-direction:column;gap:5px}
+.testimonial-feature footer strong{font-size:16px}
+.testimonial-feature footer span{color:#777;font-size:13px}
+.testimonial-tabs{display:grid;grid-template-columns:1fr 1fr}
+.testimonial-tabs button{min-height:122px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:22px 25px;border:0;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff;color:var(--charcoal);text-align:left;cursor:pointer;transition:background .18s,color .18s}
+.testimonial-tabs button:nth-child(2n){border-right:0}
+.testimonial-tabs button:nth-last-child(-n+2){border-bottom:0}
+.testimonial-tabs button:hover{background:#fff8fc}
+.testimonial-tabs button.is-active{background:var(--magenta);color:#fff}
+.testimonial-tabs button strong{font-size:16px}
+.testimonial-tabs button span{margin-top:3px;font-size:12px;opacity:.72}
+.testimonial-tabs button small{margin-top:12px;font-size:11px;line-height:1.3}
+.testimonial-tabs button:focus-visible{outline:3px solid var(--yellow);outline-offset:-4px}
+@media(max-width:760px){
+  [data-pwc-section="features-3"] .shelf,
+  [data-pwc-section="features-4"] .shelf,
+  [data-pwc-section="features-5"] .shelf{padding-bottom:16px}
+  [data-pwc-section="section-10"] .promo-banner--story,
+  [data-pwc-section="section-11"] .promo-banner--story,
+  [data-pwc-section="section-12"] .promo-banner--story{padding-top:0}
+  .testimonials{padding:52px 0 60px}
+  .testimonials__header{margin-bottom:25px}
+  .testimonials__header h2{font-size:30px}
+  .testimonials__body{display:block}
+  .testimonial-feature{min-height:360px;padding:43px 25px;border-right:0;border-bottom:1px solid var(--border)}
+  .testimonial-feature>img{right:24px;top:26px;width:52px;height:52px}
+  .testimonial-feature blockquote{font-size:20px}
+  .testimonial-tabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}
+  .testimonial-tabs button{flex:0 0 185px;min-height:112px;border-right:1px solid var(--border);border-bottom:0;scroll-snap-align:start}
 }
