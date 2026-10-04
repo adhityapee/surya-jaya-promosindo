@@ -1,4 +1,4 @@
-﻿import { PromoBanner } from "../section-5/Section5Section.jsx";
+import { PromoBanner } from "../section-5/Section5Section.jsx";
 
 export default function Section12Section() {
   return (
@@ -11,8 +11,6 @@ export default function Section12Section() {
       title="Praktis untuk ritme kerja modern"
       description="Kipas portable, power bank, dan kartu elektronik custom untuk kebutuhan tim serta event."
       cta="Lihat 7 pilihan produk"
-      showLogo
-      badgeMark={{ top: "56%", left: "70%", size: "2.4%", mobileLeft: "66%", mobileBottom: "135px", mobileSize: "29px" }}
     />
   );
 }

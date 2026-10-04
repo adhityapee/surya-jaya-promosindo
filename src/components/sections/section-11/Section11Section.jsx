@@ -1,4 +1,4 @@
-﻿import { PromoBanner } from "../section-5/Section5Section.jsx";
+import { PromoBanner } from "../section-5/Section5Section.jsx";
 
 export default function Section11Section() {
   return (
@@ -11,8 +11,6 @@ export default function Section11Section() {
       title="Apresiasi yang terasa personal"
       description="Susun produk, kemasan, dan kartu ucapan menjadi hadiah perusahaan yang lebih berkesan."
       cta="Lihat 7 pilihan produk"
-      showLogo
-      badgeMark={{ top: "77%", left: "74%", size: "3%", mobileLeft: "70%", mobileBottom: "64px", mobileSize: "34px" }}
     />
   );
 }

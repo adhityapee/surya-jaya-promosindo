@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const slides = [
   { desktop: "/assets/images/hero/hero-pen-office.webp", mobile: "/assets/images/hero/hero-pen-office.webp", label: "Pulpen custom untuk setiap ide", note: "Detail kecil yang selalu hadir di meja kerja" },
@@ -31,7 +31,7 @@ export default function Section2Section() {
               <source media="(max-width: 760px)" srcSet={slide.mobile} />
               <img src={slide.desktop} alt="" />
             </picture>
-            <span className="hero-copy"><img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="" /><small>Katalog Surya Jaya Promosindo</small><strong>{slide.label}</strong><em>{slide.note}</em></span>
+            <span className="hero-copy"><small>Katalog Surya Jaya Promosindo</small><strong>{slide.label}</strong><em>{slide.note}</em></span>
           </button>
         ))}
       </div>

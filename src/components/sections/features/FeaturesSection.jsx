@@ -1,18 +1,5 @@
 ﻿import { useState } from "react";
 
-function ProductBrandMark({ mark, modal = false }) {
-  if (!mark) return null;
-  return (
-    <span
-      className={`product-brand-mark ${modal ? "product-brand-mark--modal" : ""}`}
-      style={{ "--brand-top": mark.top, "--brand-left": mark.left, "--brand-size": mark.size }}
-      aria-hidden="true"
-    >
-      <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="" />
-    </span>
-  );
-}
-
 export function CatalogShelf({ title, subtitle, products, id, interactive = false }) {
   const [offset, setOffset] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -33,7 +20,6 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
             <article className="product-card" key={`${product.name}-${index}`}>
               <div className="product-image">
                 <img src={product.image} alt={product.name} />
-                <ProductBrandMark mark={product.brandMark} />
                 {product.badge && <span className="product-badge">{product.badge}</span>}
               </div>
               <h3 className="product-name">{product.name}</h3>
@@ -51,7 +37,6 @@ export function CatalogShelf({ title, subtitle, products, id, interactive = fals
             <button className="modal-close" type="button" onClick={() => setSelected(null)} aria-label="Tutup">×</button>
             <div className="product-modal__visual">
               <img src={selected.image} alt={selected.name} />
-              <ProductBrandMark mark={selected.brandMark} modal />
             </div>
             <div className="product-modal__copy"><span className="image-product__eyebrow">KATALOG SOUVENIR</span><h3>{selected.name}</h3><p>{selected.description || "Produk dapat disesuaikan dengan logo, warna, dan kebutuhan acara Anda. Hubungi tim Surya Jaya Promosindo untuk pilihan bahan serta teknik cetak."}</p>{selected.price && <strong>{selected.price}</strong>}<p className="stock">{selected.stock || "Bisa custom logo"}</p></div>
           </article>

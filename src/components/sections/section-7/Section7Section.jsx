@@ -1,4 +1,4 @@
-﻿import { PromoBanner } from "../section-5/Section5Section.jsx";
+import { PromoBanner } from "../section-5/Section5Section.jsx";
 
 export default function Section7Section() {
   return (
@@ -11,7 +11,6 @@ export default function Section7Section() {
       title="Temani ritme kerja setiap hari"
       description="Drinkware custom untuk meja kerja, perjalanan, event, dan apresiasi tim yang lebih berkesan."
       cta="Lihat 7 pilihan produk"
-      showLogo
     />
   );
 }
