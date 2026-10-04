@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useRef, useState } from "react";
 import "./styles.css";
 
 const menus = [
@@ -27,8 +27,65 @@ const catalogTerms = [
 export default function HeaderSection() {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
   const [query, setQuery] = useState("");
+  const headerRef = useRef(null);
+  const scrollSentinelRef = useRef(null);
+  const closeTimerRef = useRef(null);
+  const hoverOpenedMenuRef = useRef(null);
   const suggestions = useMemo(() => query.trim() ? catalogTerms.filter((term) => term.toLowerCase().includes(query.toLowerCase())).slice(0, 5) : [], [query]);
+
+  useEffect(() => {
+    const sentinel = scrollSentinelRef.current;
+    if (!sentinel) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      const compact = !entry.isIntersecting;
+      setIsCompact(compact);
+      if (compact) {
+        hoverOpenedMenuRef.current = null;
+        setOpenMenu(null);
+      }
+    });
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const closeMenus = (event) => {
+      if (!headerRef.current?.contains(event.target)) setOpenMenu(null);
+    };
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setOpenMenu(null);
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", closeMenus);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeMenus);
+      document.removeEventListener("keydown", closeOnEscape);
+      window.clearTimeout(closeTimerRef.current);
+    };
+  }, []);
+
+  const openDesktopMenu = (index, source) => {
+    if (!window.matchMedia("(min-width: 761px)").matches) return;
+    window.clearTimeout(closeTimerRef.current);
+    if (source === "hover" && openMenu !== index) hoverOpenedMenuRef.current = index;
+    setOpenMenu(index);
+  };
+
+  const scheduleMenuClose = () => {
+    if (!window.matchMedia("(min-width: 761px)").matches) return;
+    window.clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = window.setTimeout(() => {
+      hoverOpenedMenuRef.current = null;
+      setOpenMenu(null);
+    }, 160);
+  };
 
   const submitSearch = (event) => {
     event.preventDefault();
@@ -36,10 +93,21 @@ export default function HeaderSection() {
   };
 
   return (
-    <header className="catalog-header" data-pwc-critical="header-1">
+    <>
+      <span className="header-scroll-sentinel" ref={scrollSentinelRef} aria-hidden="true" />
       <div className="browser-note">Katalog digital Surya Jaya Promosindo — solusi souvenir custom untuk perusahaan, komunitas, dan acara.</div>
+      <header ref={headerRef} className={`catalog-header ${isCompact ? "is-compact" : ""}`} data-pwc-critical="header-1">
       <div className="header-main page-shell">
-        <button className="mobile-menu-toggle" type="button" aria-label="Buka menu" aria-expanded={mobileOpen} onClick={() => setMobileOpen((value) => !value)}>
+        <button
+          className={`mobile-menu-toggle ${mobileOpen ? "is-active" : ""}`}
+          type="button"
+          aria-label={mobileOpen ? "Tutup menu" : "Buka menu"}
+          aria-expanded={mobileOpen}
+          onClick={() => {
+            setMobileOpen((value) => !value);
+            if (mobileOpen) setOpenMenu(null);
+          }}
+        >
           <span /><span /><span />
         </button>
         <a className="brand" href="/" aria-label="Surya Jaya Promosindo">
@@ -71,12 +139,29 @@ export default function HeaderSection() {
             {menus.map((menu, index) => {
               const isOpen = openMenu === index;
               return (
-                <li key={menu.label} className={isOpen ? "is-open" : ""}>
+                <li
+                  key={menu.label}
+                  className={isOpen ? "is-open" : ""}
+                  onMouseEnter={() => openDesktopMenu(index, "hover")}
+                  onMouseLeave={scheduleMenuClose}
+                  onFocus={() => openDesktopMenu(index, "focus")}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget)) scheduleMenuClose();
+                  }}
+                >
                   <button
                     type="button"
                     data-pwc-interaction={`interaction-${index + 1}`}
                     aria-expanded={isOpen}
-                    onClick={() => setOpenMenu(isOpen ? null : index)}
+                    onClick={() => {
+                      window.clearTimeout(closeTimerRef.current);
+                      if (hoverOpenedMenuRef.current === index) {
+                        hoverOpenedMenuRef.current = null;
+                        setOpenMenu(index);
+                        return;
+                      }
+                      setOpenMenu(isOpen ? null : index);
+                    }}
                   >
                     {menu.label}<span className="chevron">⌄</span>
                   </button>
@@ -86,7 +171,7 @@ export default function HeaderSection() {
                         {menu.groups.map((group) => (
                           <div key={group[0]}>
                             <strong>{group[0]}</strong>
-                            {group.slice(1).map((item) => <a key={item} href={`#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{item}</a>)}
+                            {group.slice(1).map((item) => <a key={item} tabIndex={isOpen ? 0 : -1} href={`#${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{item}</a>)}
                           </div>
                         ))}
                       </div>
@@ -106,6 +191,7 @@ export default function HeaderSection() {
           </div>
         </nav>
       </div>
-    </header>
+      </header>
+    </>
   );
 }
