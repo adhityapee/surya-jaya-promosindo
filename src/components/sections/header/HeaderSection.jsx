@@ -3,9 +3,12 @@ import { CaretDown } from "@phosphor-icons/react/CaretDown";
 import { Info } from "@phosphor-icons/react/Info";
 import { MagnifyingGlass } from "@phosphor-icons/react/MagnifyingGlass";
 import { Package } from "@phosphor-icons/react/Package";
+import { Storefront } from "@phosphor-icons/react/Storefront";
 import { Truck } from "@phosphor-icons/react/Truck";
 import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
 import { X } from "@phosphor-icons/react/X";
+import MarketplaceMark from "../../MarketplaceMark.jsx";
+import { marketplaces } from "../../../data/marketplaces.js";
 import "./styles.css";
 
 const whatsappMessage = "Halo Surya Jaya Promosindo, saya ingin berkonsultasi mengenai pemesanan souvenir custom. Produk yang saya butuhkan: [nama produk]. Jumlah: [jumlah pcs]. Mohon informasinya, terima kasih.";
@@ -126,6 +129,12 @@ const headerCopy = {
     phoneLabel: "Telepon 0857 4038 6268",
     whatsappLabel: "Chat WhatsApp",
     whatsappAria: "Hubungi Surya Jaya Promosindo melalui WhatsApp",
+    marketplaceTitle: "Toko Online",
+    marketplaceSubtitle: "Tokopedia & Shopee",
+    marketplaceAria: "Buka pilihan toko online",
+    marketplaceEyebrow: "TOKO ONLINE SJP",
+    marketplaceHeading: "Belanja melalui marketplace",
+    marketplaceIntro: "Pilih marketplace yang biasa Anda gunakan. Konsultasi produk custom tetap tersedia melalui WhatsApp.",
     menuLabels: ["TUMBLER & MUG", "PULPEN & NOTEBOOK", "TAS & GOODIE BAG", "LANYARD & ID CARD", "GADGET", "GIFT SET & HAMPERS", "EVENT KIT", "APPAREL CUSTOM", "SOUVENIR CUSTOM", "CETAK PROMOSI"],
     secondary: ["KATALOG SOUVENIR CUSTOM", "PALING DIMINATI", "CORPORATE GIFT", "PAKET EVENT", "Lokasi Toko"],
   },
@@ -276,7 +285,10 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
           aria-expanded={mobileOpen}
           onClick={() => {
             setMobileOpen((value) => !value);
-            if (mobileOpen) setOpenMenu(null);
+            if (mobileOpen) {
+              setOpenMenu(null);
+              setOpenUtility(null);
+            }
           }}
         >
           <span /><span /><span />
@@ -301,6 +313,11 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
           <button className={`shipping utility-trigger ${openUtility === "order" ? "is-open" : ""}`} type="button" aria-expanded={openUtility === "order"} aria-controls="order-panel" aria-label={copy.orderAria} onClick={() => toggleUtility("order")}>
             <Truck className="delivery-icon" size={29} weight="regular" aria-hidden="true" />
             <span><strong>{copy.orderTitle}</strong><small>{copy.orderSubtitle}</small></span>
+          </button>
+          <button className={"marketplace-trigger utility-trigger " + (openUtility === "marketplace" ? "is-open" : "")} type="button" aria-expanded={openUtility === "marketplace"} aria-controls="marketplace-panel" aria-label={copy.marketplaceAria} onClick={() => toggleUtility("marketplace")}>
+            <Storefront size={27} weight="regular" aria-hidden="true" />
+            <span><strong>{copy.marketplaceTitle}</strong><small>{copy.marketplaceSubtitle}</small></span>
+            <CaretDown className="utility-caret" size={13} weight="bold" aria-hidden="true" />
           </button>
           <a className="header-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}>
             <WhatsappLogo size={21} weight="fill" aria-hidden="true" />
@@ -337,9 +354,27 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
         </aside>
       )}
 
+      {openUtility === "marketplace" && (
+          <aside className="header-utility-panel marketplace-panel" id="marketplace-panel" aria-labelledby="marketplace-panel-title">
+            <button className="utility-panel-close" type="button" aria-label={copy.closePanel} onClick={() => setOpenUtility(null)}><X size={19} weight="bold" aria-hidden="true" /></button>
+            <small>{copy.marketplaceEyebrow}</small>
+            <h2 id="marketplace-panel-title">{copy.marketplaceHeading}</h2>
+            <p>{copy.marketplaceIntro}</p>
+            <div className="marketplace-panel__links">
+              {marketplaces.map((marketplace) => (
+                <a href={marketplace.href} target="_blank" rel="noreferrer" key={marketplace.id} onClick={() => setOpenUtility(null)}>
+                  <MarketplaceMark marketplace={marketplace} />
+                  <span>{marketplace.label}</span>
+                </a>
+              ))}
+            </div>
+          </aside>
+        )}
+
       <div className={`navigation-wrap simple-navigation-wrap ${mobileOpen ? "is-mobile-open" : ""}`}>
         <div className="mobile-utility-bar page-shell">
           <button type="button" aria-expanded={openUtility === "order"} aria-controls="order-panel" onClick={() => toggleUtility("order")}><Truck size={22} weight="regular" aria-hidden="true" />{copy.orderTitle}</button>
+          <button type="button" aria-expanded={openUtility === "marketplace"} aria-controls="marketplace-panel" onClick={() => toggleUtility("marketplace")}><Storefront size={21} weight="regular" aria-hidden="true" />{copy.marketplaceTitle}</button>
           <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}><WhatsappLogo size={20} weight="fill" aria-hidden="true" />WhatsApp</a>
         </div>
         <nav className="simple-primary-nav page-shell" aria-label={copy.navLabel}>

@@ -6,9 +6,11 @@ import { Package } from "@phosphor-icons/react/Package";
 import { Palette } from "@phosphor-icons/react/Palette";
 import { Truck } from "@phosphor-icons/react/Truck";
 import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
+import MarketplaceMark from "../../components/MarketplaceMark.jsx";
 import HeaderSection from "../../components/sections/header/HeaderSection.jsx";
 import Section13Section from "../../components/sections/section-13/Section13Section.jsx";
 import FooterSection from "../../components/sections/footer/FooterSection.jsx";
+import { marketplaces } from "../../data/marketplaces.js";
 import "./styles.css";
 
 const whatsappMessage = "Halo Surya Jaya Promosindo, saya ingin berkonsultasi mengenai kebutuhan souvenir perusahaan. Mohon bantu rekomendasinya, terima kasih.";
@@ -77,6 +79,23 @@ export default function HomePage() {
             ))}
           </div>
           <a className="home-text-link" href="/products">Lihat semua kategori<ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
+        </section>
+
+        <section className="home-marketplaces content-shell" aria-labelledby="marketplace-title">
+          <div className="home-marketplaces__intro">
+            <span className="home-eyebrow">TOKO ONLINE SJP</span>
+            <h2 id="marketplace-title">Belanja melalui marketplace pilihan Anda</h2>
+            <p>Untuk produk siap pesan, kunjungi toko online Surya Jaya Promosindo. Kebutuhan custom dan pesanan perusahaan tetap dapat dikonsultasikan melalui WhatsApp.</p>
+          </div>
+          <div className="home-marketplaces__list">
+            {marketplaces.map((marketplace) => (
+              <a className={"home-marketplace home-marketplace--" + marketplace.id} href={marketplace.href} target="_blank" rel="noreferrer" key={marketplace.id}>
+                <MarketplaceMark marketplace={marketplace} />
+                <span className="home-marketplace__copy"><strong>{marketplace.label}</strong><small>{marketplace.description}</small></span>
+                <ArrowRight size={21} weight="bold" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="home-process content-shell" aria-labelledby="process-title">
