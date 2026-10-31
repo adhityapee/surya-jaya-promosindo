@@ -10,7 +10,7 @@ export default function Section12Section() {
       eyebrow="GADGET CUSTOM"
       title="Praktis untuk ritme kerja modern"
       description="Kipas portable, power bank, dan kartu elektronik custom untuk kebutuhan tim serta event."
-      cta="Lihat 7 pilihan produk"
+      cta="Jelajahi katalog produk"
     />
   );
 }

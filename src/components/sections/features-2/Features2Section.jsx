@@ -10,12 +10,11 @@ const products = [
     description: "Botol vakum stainless dengan lapisan matte dan tutup metal. Cocok untuk corporate gift, onboarding kit, dan kebutuhan eksekutif.",
   },
   {
-    name: "Tumbler handle & straw 600 ml",
-    image: "/assets/images/products/drinkware/handled-tumbler-straw.webp",
-    price: "Mulai Rp 69.000",
-    minimum: "50 pcs",
-    badge: "Favorit",
-    description: "Tumbler insulated dengan handle dan sedotan reusable untuk aktivitas kerja, perjalanan, dan event perusahaan.",
+    name: "Tumbler tutup pegangan custom",
+    image: "/assets/images/products/source-catalog/tumbler-tutup-pegangan-navy.webp",
+    price: "",
+    minimum: "100 pcs",
+    description: "Tumbler berbodi navy dengan tutup ulir dan pegangan oval untuk dibawa saat bekerja atau bepergian. Badan tumbler dapat dicetak sesuai desain perusahaan. Konfirmasikan kapasitas, bahan, dan pilihan warna kepada tim SJP.",
   },
   {
     name: "Botol sport Tritan 750 ml",

@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 
 const testimonials = [
   { name: "Andi", city: "Jakarta", product: "Kipas Mini Portable", quote: "Kipasnya kuat, cetakannya tajam, dan pelayanannya cepat." },
@@ -16,11 +16,11 @@ export default function Section13Section() {
     <section className="testimonials content-shell" id="testimonials">
       <div className="testimonials__header">
         <h2>Dipercaya untuk berbagai kebutuhan promosi</h2>
-        <p>Pengalaman pelanggan setelah memesan produk custom dari Surya Jaya Promosindo.</p>
+        <p>Pengalaman pelanggan setelah memesan souvenir custom dari Surya Jaya Promosindo.</p>
       </div>
       <div className="testimonials__body">
         <article className="testimonial-feature" aria-live="polite">
-          <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="" />
+          <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="Logo Surya Jaya Promosindo" loading="lazy" decoding="async" />
           <div className="testimonial-stars" aria-label="5 dari 5 bintang">★★★★★</div>
           <blockquote>“{current.quote}”</blockquote>
           <footer><strong>{current.name}</strong><span>{current.city} | {current.product}</span></footer>

@@ -1,0 +1,834 @@
+[
+  {
+    "id": "weekly-best",
+    "label": "Pulpen Custom",
+    "shortLabel": "Pulpen",
+    "subtitle": "Pulpen plastik, gel, KACO, dan metal untuk berbagai kebutuhan promosi.",
+    "poster": "/assets/images/catalog-posters/pulpen-catalog-v2.webp",
+    "storyTitle": "Pilihan pulpen untuk setiap kebutuhan",
+    "storyDescription": "Pilih model plastik untuk promosi, gel untuk perlengkapan kerja, atau metal untuk souvenir perusahaan. Model dan pilihan warna mengikuti katalog.",
+    "products": [
+      {
+        "id": "pulpen-gepeng",
+        "name": "Pulpen gepeng",
+        "image": "/assets/images/products/client-catalog/pulpen-gepeng.webp",
+        "minimum": "200 pcs",
+        "description": "Bodi pipih dengan klip lebar untuk penempatan desain. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-0.png"
+        }
+      },
+      {
+        "id": "pulpen-hitam-promosi",
+        "name": "Pulpen hitam promosi",
+        "image": "/assets/images/products/client-catalog/pulpen-hitam-promosi.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen promosi dengan pilihan bodi hitam dan warna sesuai katalog. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-2.png"
+        }
+      },
+      {
+        "id": "pulpen-kertas",
+        "name": "Pulpen kertas",
+        "image": "/assets/images/products/client-catalog/pulpen-kertas.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen berbodi kertas dengan aksen warna pada klip dan ujung. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-4.png"
+        }
+      },
+      {
+        "id": "pulpen-carinex",
+        "name": "Pulpen Carinex",
+        "image": "/assets/images/products/client-catalog/pulpen-carinex.webp",
+        "minimum": "200 pcs",
+        "description": "Model Carinex dengan pilihan aksen warna pada bodi putih. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-7.png"
+        }
+      },
+      {
+        "id": "pulpen-06",
+        "name": "Pulpen 06",
+        "image": "/assets/images/products/client-catalog/pulpen-06.webp",
+        "minimum": "200 pcs",
+        "description": "Model 06 dengan bodi ramping dan pilihan warna sesuai katalog. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-10.png"
+        }
+      },
+      {
+        "id": "pulpen-05",
+        "name": "Pulpen 05",
+        "image": "/assets/images/products/client-catalog/pulpen-05.webp",
+        "minimum": "200 pcs",
+        "description": "Model 05 dengan pilihan warna untuk kebutuhan promosi. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-22.png"
+        }
+      },
+      {
+        "id": "pulpen-17",
+        "name": "Pulpen 17",
+        "image": "/assets/images/products/client-catalog/pulpen-17.webp",
+        "minimum": "200 pcs",
+        "description": "Model 17 dengan klip dan aksen warna sesuai katalog. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-23.png"
+        }
+      },
+      {
+        "id": "pulpen-ici-stylus",
+        "name": "Pulpen ICI Stylus",
+        "image": "/assets/images/products/client-catalog/pulpen-ici-stylus.webp",
+        "minimum": "200 pcs",
+        "description": "Model ICI Stylus untuk menulis dan penggunaan layar sentuh. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-24.png"
+        }
+      },
+      {
+        "id": "pulpen-03",
+        "name": "Pulpen 03",
+        "image": "/assets/images/products/client-catalog/pulpen-03.webp",
+        "minimum": "200 pcs",
+        "description": "Model 03 dengan klip berlekuk dan pilihan aksen warna. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-25.png"
+        }
+      },
+      {
+        "id": "pulpen-hitam-klasik",
+        "name": "Pulpen hitam klasik",
+        "image": "/assets/images/products/client-catalog/pulpen-hitam-klasik.webp",
+        "minimum": "200 pcs",
+        "description": "Model hitam klasik dengan detail ring sesuai foto katalog. Dapat dikustom sesuai kebutuhan acara atau perusahaan.",
+        "group": "Plastik",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 3,
+          "image": "0-3-26.png"
+        }
+      },
+      {
+        "id": "pulpen-gel-pastel",
+        "name": "Pulpen gel pastel",
+        "image": "/assets/images/products/client-catalog/pulpen-gel-pastel.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen gel dengan pilihan warna lembut sesuai foto katalog. Konfirmasikan pilihan warna dan cetak kepada tim SJP.",
+        "group": "Gel & KACO",
+        "source": {
+          "file": "CATALOG PULPEN GELL.pdf",
+          "page": 1,
+          "image": "2-1-2.png"
+        }
+      },
+      {
+        "id": "pulpen-gel-warna",
+        "name": "Pulpen gel warna",
+        "image": "/assets/images/products/client-catalog/pulpen-gel-warna.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen gel dengan pilihan warna untuk kebutuhan promosi dan perlengkapan kerja. Konfirmasikan pilihan warna dan cetak kepada tim SJP.",
+        "group": "Gel & KACO",
+        "source": {
+          "file": "CATALOG PULPEN GELL.pdf",
+          "page": 1,
+          "image": "2-1-1.png"
+        }
+      },
+      {
+        "id": "pulpen-kaco",
+        "name": "Pulpen KACO",
+        "image": "/assets/images/products/client-catalog/pulpen-kaco.webp",
+        "minimum": "100 pcs",
+        "description": "Model KACO dengan pilihan warna hitam dan putih sesuai katalog. Konfirmasikan pilihan warna dan cetak kepada tim SJP.",
+        "group": "Gel & KACO",
+        "source": {
+          "file": "CATALOG PULPEN GELL.pdf",
+          "page": 1,
+          "image": "2-1-0.png"
+        }
+      },
+      {
+        "id": "pulpen-metal-bp-222",
+        "name": "Pulpen metal BP 222",
+        "image": "/assets/images/products/client-catalog/pulpen-metal-bp-222.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen metal BP 222 untuk souvenir perusahaan dan kebutuhan promosi. Pilihan warna serta penempatan logo dikonfirmasi sebelum produksi.",
+        "group": "Metal",
+        "source": {
+          "file": "CTLG PULPEN STAINLS.pdf",
+          "page": 1,
+          "image": "3-1-0.png"
+        }
+      },
+      {
+        "id": "pulpen-metal-bp-921",
+        "name": "Pulpen metal BP 921",
+        "image": "/assets/images/products/client-catalog/pulpen-metal-bp-921.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen metal BP 921 untuk souvenir perusahaan dan kebutuhan promosi. Pilihan warna serta penempatan logo dikonfirmasi sebelum produksi.",
+        "group": "Metal",
+        "source": {
+          "file": "CTLG PULPEN STAINLS.pdf",
+          "page": 1,
+          "image": "3-1-2.png"
+        }
+      },
+      {
+        "id": "pulpen-paku-medium",
+        "name": "Pulpen Paku Medium",
+        "image": "/assets/images/products/client-catalog/pulpen-paku-medium.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen Paku Medium untuk souvenir perusahaan dan kebutuhan promosi. Pilihan warna serta penempatan logo dikonfirmasi sebelum produksi.",
+        "group": "Metal",
+        "source": {
+          "file": "CTLG PULPEN STAINLS.pdf",
+          "page": 1,
+          "image": "3-1-1.png"
+        }
+      },
+      {
+        "id": "pulpen-bp-016",
+        "name": "Pulpen BP 016",
+        "image": "/assets/images/products/client-catalog/pulpen-bp-016.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen BP 016 untuk souvenir perusahaan dan kebutuhan promosi. Pilihan warna serta penempatan logo dikonfirmasi sebelum produksi.",
+        "group": "Metal",
+        "source": {
+          "file": "CTLG PULPEN STAINLS.pdf",
+          "page": 1,
+          "image": "3-1-4.png"
+        }
+      },
+      {
+        "id": "pulpen-bp-171",
+        "name": "Pulpen BP 171",
+        "image": "/assets/images/products/client-catalog/pulpen-bp-171.webp",
+        "minimum": "200 pcs",
+        "description": "Pulpen BP 171 untuk souvenir perusahaan dan kebutuhan promosi. Pilihan warna serta penempatan logo dikonfirmasi sebelum produksi.",
+        "group": "Metal",
+        "source": {
+          "file": "CTLG PULPEN STAINLS.pdf",
+          "page": 1,
+          "image": "3-1-3.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/pulpen-gepeng.webp",
+    "count": 18
+  },
+  {
+    "id": "agenda",
+    "label": "Agenda & Notebook",
+    "shortLabel": "Agenda",
+    "subtitle": "Agenda karet, magnet, premium, dan spiral dalam pilihan A5 serta A6.",
+    "poster": "/assets/images/catalog-posters/agenda-catalog-v2.webp",
+    "storyTitle": "Catatan yang menemani aktivitas kerja",
+    "storyDescription": "Dari rapat hingga seminar, pilih sampul dan model agenda sesuai kebutuhan tim. Tersedia pilihan karet, magnet, premium, dan spiral dalam katalog.",
+    "products": [
+      {
+        "id": "agenda-a5-karet",
+        "name": "Agenda A5 karet",
+        "image": "/assets/images/products/client-catalog/agenda-a5-karet.webp",
+        "minimum": "50 pcs",
+        "description": "Agenda A5 karet dengan sampul yang dapat dipersonalisasi. Konfirmasikan ukuran, isi, dan warna sebelum pemesanan.",
+        "group": "Agenda",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 4,
+          "image": "0-4-16.png"
+        }
+      },
+      {
+        "id": "agenda-a6-karet",
+        "name": "Agenda A6 karet",
+        "image": "/assets/images/products/client-catalog/agenda-a6-karet.webp",
+        "minimum": "50 pcs",
+        "description": "Agenda A6 karet dengan sampul yang dapat dipersonalisasi. Konfirmasikan ukuran, isi, dan warna sebelum pemesanan.",
+        "group": "Agenda",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 4,
+          "image": "0-4-17.png"
+        }
+      },
+      {
+        "id": "agenda-a5-magnet",
+        "name": "Agenda A5 magnet",
+        "image": "/assets/images/products/client-catalog/agenda-a5-magnet.webp",
+        "minimum": "50 pcs",
+        "description": "Agenda A5 magnet dengan sampul yang dapat dipersonalisasi. Konfirmasikan ukuran, isi, dan warna sebelum pemesanan.",
+        "group": "Agenda",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 4,
+          "image": "0-4-18.png"
+        }
+      },
+      {
+        "id": "agenda-a5-premium",
+        "name": "Agenda A5 premium",
+        "image": "/assets/images/products/client-catalog/agenda-a5-premium.webp",
+        "minimum": "50 pcs",
+        "description": "Agenda A5 premium dengan sampul yang dapat dipersonalisasi. Konfirmasikan ukuran, isi, dan warna sebelum pemesanan.",
+        "group": "Agenda",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 4,
+          "image": "0-4-19.png"
+        }
+      },
+      {
+        "id": "agenda-a5-spiral",
+        "name": "Notebook A5 spiral",
+        "image": "/assets/images/products/client-catalog/agenda-a5-spiral.webp",
+        "minimum": "100 pcs",
+        "description": "Notebook A5 spiral dengan sampul yang dapat dipersonalisasi. Konfirmasikan ukuran, isi, dan warna sebelum pemesanan.",
+        "group": "Agenda",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 4,
+          "image": "0-4-20.png"
+        }
+      },
+      {
+        "id": "agenda-a6-spiral",
+        "name": "Notebook A6 spiral",
+        "image": "/assets/images/products/client-catalog/agenda-a6-spiral.webp",
+        "minimum": "100 pcs",
+        "description": "Notebook A6 spiral dengan sampul yang dapat dipersonalisasi. Konfirmasikan ukuran, isi, dan warna sebelum pemesanan.",
+        "group": "Agenda",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 4,
+          "image": "0-4-33.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/agenda-a5-karet.webp",
+    "count": 6
+  },
+  {
+    "id": "drinkware",
+    "label": "Tumbler & Mug",
+    "shortLabel": "Tumbler & Mug",
+    "subtitle": "Dua belas pilihan tumbler dan mug dari katalog produk SJP.",
+    "poster": "/assets/images/catalog-posters/tumbler-catalog-v2.webp",
+    "storyTitle": "Teman minum untuk ritme kerja Anda",
+    "storyDescription": "Pilih model Sakura, Hook Japan, Japan, Elite, Coffe, Jamur, Lulu tutup kayu, Mug Egg, Tyso, Arizona, Bowling, atau Sport. Konsultasikan cetak satu sisi, dua sisi, maupun full print.",
+    "products": [
+      {
+        "id": "sakura",
+        "name": "Tumbler Sakura",
+        "image": "/assets/images/products/client-catalog/sakura.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Sakura sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-9.png"
+        }
+      },
+      {
+        "id": "hook-japan",
+        "name": "Tumbler Hook Japan",
+        "image": "/assets/images/products/client-catalog/hook-japan.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Hook Japan sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-11.png"
+        }
+      },
+      {
+        "id": "japan",
+        "name": "Tumbler Japan",
+        "image": "/assets/images/products/client-catalog/japan.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Japan sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-13.png"
+        }
+      },
+      {
+        "id": "elite",
+        "name": "Tumbler Elite",
+        "image": "/assets/images/products/client-catalog/elite.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Elite sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-15.png"
+        }
+      },
+      {
+        "id": "coffe",
+        "name": "Tumbler Coffe",
+        "image": "/assets/images/products/client-catalog/coffe.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Coffe sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-17.png"
+        }
+      },
+      {
+        "id": "jamur",
+        "name": "Tumbler Jamur",
+        "image": "/assets/images/products/client-catalog/jamur.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Jamur sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-19.png"
+        }
+      },
+      {
+        "id": "lulu-tutup-kayu",
+        "name": "Tumbler Lulu tutup kayu",
+        "image": "/assets/images/products/client-catalog/lulu-tutup-kayu.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Lulu tutup kayu sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-21.png"
+        }
+      },
+      {
+        "id": "mug-egg",
+        "name": "Mug Egg",
+        "image": "/assets/images/products/client-catalog/mug-egg.webp",
+        "minimum": "50 pcs",
+        "description": "Mug Egg sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Mug",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-23.png"
+        }
+      },
+      {
+        "id": "tyso",
+        "name": "Tumbler Tyso",
+        "image": "/assets/images/products/client-catalog/tyso.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Tyso sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-25.png"
+        }
+      },
+      {
+        "id": "arizona",
+        "name": "Tumbler Arizona",
+        "image": "/assets/images/products/client-catalog/arizona.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Arizona sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-27.png"
+        }
+      },
+      {
+        "id": "bowling",
+        "name": "Tumbler Bowling",
+        "image": "/assets/images/products/client-catalog/bowling.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Bowling sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-29.png"
+        }
+      },
+      {
+        "id": "sport",
+        "name": "Tumbler Sport",
+        "image": "/assets/images/products/client-catalog/sport.webp",
+        "minimum": "50 pcs",
+        "description": "Tumbler Sport sesuai model pada katalog. Tersedia pilihan cetak satu sisi, dua sisi, atau full print; warna dan detail cetak dikonfirmasi kepada tim SJP.",
+        "group": "Tumbler",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 2,
+          "image": "0-2-31.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/sakura.webp",
+    "count": 12
+  },
+  {
+    "id": "bags",
+    "label": "Tote Bag",
+    "shortLabel": "Tote Bag",
+    "subtitle": "Tote bag kanvas cream, putih, navy, serta model D300.",
+    "poster": "/assets/images/catalog-posters/totebag-catalog-v2.webp",
+    "storyTitle": "Tas promosi yang ikut ke berbagai acara",
+    "storyDescription": "Pilihan tote bag kanvas 30 × 40 cm dan D300 35 × 30 cm untuk kebutuhan merchandise, seminar, serta kegiatan perusahaan.",
+    "products": [
+      {
+        "id": "tote-kanvas-cream",
+        "name": "Tote bag kanvas cream",
+        "image": "/assets/images/products/client-catalog/tote-kanvas-cream.webp",
+        "minimum": "50 pcs",
+        "description": "Kanvas cream ukuran 30 × 40 cm. Dapat dicetak sesuai logo atau desain acara Anda.",
+        "group": "Tote bag",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 1,
+          "image": "0-1-0.png"
+        }
+      },
+      {
+        "id": "tote-kanvas-putih",
+        "name": "Tote bag kanvas putih",
+        "image": "/assets/images/products/client-catalog/tote-kanvas-putih.webp",
+        "minimum": "50 pcs",
+        "description": "Kanvas putih ukuran 30 × 40 cm. Dapat dicetak sesuai logo atau desain acara Anda.",
+        "group": "Tote bag",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 1,
+          "image": "0-1-1.png"
+        }
+      },
+      {
+        "id": "tote-kanvas-navy",
+        "name": "Tote bag kanvas navy",
+        "image": "/assets/images/products/client-catalog/tote-kanvas-navy.webp",
+        "minimum": "50 pcs",
+        "description": "Kanvas navy ukuran 30 × 40 cm. Dapat dicetak sesuai logo atau desain acara Anda.",
+        "group": "Tote bag",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 1,
+          "image": "0-1-2.png"
+        }
+      },
+      {
+        "id": "tote-d300",
+        "name": "Tote bag D300",
+        "image": "/assets/images/products/client-catalog/tote-d300.webp",
+        "minimum": "50 pcs",
+        "description": "Model D300 ukuran 35 × 30 cm sesuai katalog. Dapat dicetak sesuai logo atau desain acara Anda.",
+        "group": "Tote bag",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 1,
+          "image": "0-1-3.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/tote-kanvas-cream.webp",
+    "count": 4
+  },
+  {
+    "id": "payung",
+    "label": "Payung Custom",
+    "shortLabel": "Payung",
+    "subtitle": "Payung lipat, golf, double layer, dan model terbalik gagang C.",
+    "poster": "/assets/images/catalog-posters/payung-catalog-v2.webp",
+    "storyTitle": "Pilihan payung untuk aktivitas di luar kantor",
+    "storyDescription": "Tersedia sepuluh model: lipat manual, lipat otomatis, 10 jari, bagian dalam silver, golf manual, semi golf, golf otomatis, golf premium, golf dua layer, dan terbalik gagang C.",
+    "products": [
+      {
+        "id": "payung-lipat-manual",
+        "name": "Payung lipat manual",
+        "image": "/assets/images/products/client-catalog/payung-lipat-manual.webp",
+        "minimum": "20 pcs",
+        "description": "Payung lipat manual sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-1.png"
+        }
+      },
+      {
+        "id": "payung-lipat-otomatis",
+        "name": "Payung lipat otomatis",
+        "image": "/assets/images/products/client-catalog/payung-lipat-otomatis.webp",
+        "minimum": "20 pcs",
+        "description": "Payung lipat otomatis sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-2.png"
+        }
+      },
+      {
+        "id": "payung-lipat-10-jari",
+        "name": "Payung lipat 10 jari",
+        "image": "/assets/images/products/client-catalog/payung-lipat-10-jari.webp",
+        "minimum": "20 pcs",
+        "description": "Payung lipat 10 jari sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-3.png"
+        }
+      },
+      {
+        "id": "payung-manual-dalam-silver",
+        "name": "Payung manual dalam silver",
+        "image": "/assets/images/products/client-catalog/payung-manual-dalam-silver.webp",
+        "minimum": "20 pcs",
+        "description": "Payung manual dalam silver sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-4.png"
+        }
+      },
+      {
+        "id": "payung-golf-manual",
+        "name": "Payung golf manual",
+        "image": "/assets/images/products/client-catalog/payung-golf-manual.webp",
+        "minimum": "20 pcs",
+        "description": "Payung golf manual sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-5.png"
+        }
+      },
+      {
+        "id": "payung-semi-golf",
+        "name": "Payung semi golf",
+        "image": "/assets/images/products/client-catalog/payung-semi-golf.webp",
+        "minimum": "20 pcs",
+        "description": "Payung semi golf sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-6.png"
+        }
+      },
+      {
+        "id": "payung-golf-otomatis",
+        "name": "Payung golf otomatis",
+        "image": "/assets/images/products/client-catalog/payung-golf-otomatis.webp",
+        "minimum": "20 pcs",
+        "description": "Payung golf otomatis sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-7.png"
+        }
+      },
+      {
+        "id": "payung-golf-premium",
+        "name": "Payung golf premium",
+        "image": "/assets/images/products/client-catalog/payung-golf-premium.webp",
+        "minimum": "20 pcs",
+        "description": "Payung golf premium sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-8.png"
+        }
+      },
+      {
+        "id": "payung-golf-dua-layer",
+        "name": "Payung golf dua layer",
+        "image": "/assets/images/products/client-catalog/payung-golf-dua-layer.webp",
+        "minimum": "20 pcs",
+        "description": "Payung golf dua layer sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-9.png"
+        }
+      },
+      {
+        "id": "payung-terbalik-gagang-c",
+        "name": "Payung terbalik gagang C",
+        "image": "/assets/images/products/client-catalog/payung-terbalik-gagang-c.webp",
+        "minimum": "20 pcs",
+        "description": "Payung terbalik gagang C sesuai model katalog. Konsultasikan desain, warna, dan penempatan logo kepada tim SJP sebelum produksi.",
+        "group": "Payung",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 5,
+          "image": "0-5-10.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/payung-lipat-manual.webp",
+    "count": 10
+  },
+  {
+    "id": "gadget-custom",
+    "label": "Kipas Portable",
+    "shortLabel": "Kipas",
+    "subtitle": "Kipas LED, LED N68, dan kipas mini sesuai katalog.",
+    "poster": "/assets/images/catalog-posters/kipas-catalog-v2.webp",
+    "storyTitle": "Souvenir praktis untuk kegiatan Anda",
+    "storyDescription": "Tiga pilihan kipas portable untuk merchandise acara dan promosi. Pilih model LED, LED N68, atau mini, lalu sesuaikan desain cetak dengan kebutuhan brand.",
+    "products": [
+      {
+        "id": "kipas-led",
+        "name": "Kipas LED",
+        "image": "/assets/images/products/client-catalog/kipas-led.webp",
+        "minimum": "50 pcs",
+        "description": "Kipas LED dengan pilihan warna sesuai foto katalog dan area cetak logo. Konfirmasikan ketersediaan warna serta spesifikasi kepada tim SJP.",
+        "group": "Kipas",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 7,
+          "image": "0-7-0.png"
+        }
+      },
+      {
+        "id": "kipas-led-n68",
+        "name": "Kipas LED N68",
+        "image": "/assets/images/products/client-catalog/kipas-led-n68.webp",
+        "minimum": "50 pcs",
+        "description": "Kipas LED N68 dengan pilihan warna sesuai foto katalog dan area cetak logo. Konfirmasikan ketersediaan warna serta spesifikasi kepada tim SJP.",
+        "group": "Kipas",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 7,
+          "image": "0-7-2.png"
+        }
+      },
+      {
+        "id": "kipas-mini",
+        "name": "Kipas mini",
+        "image": "/assets/images/products/client-catalog/kipas-mini.webp",
+        "minimum": "20 pcs",
+        "description": "Kipas mini dengan pilihan warna sesuai foto katalog dan area cetak logo. Konfirmasikan ketersediaan warna serta spesifikasi kepada tim SJP.",
+        "group": "Kipas",
+        "source": {
+          "file": "catalog produk.pdf",
+          "page": 7,
+          "image": "0-7-1.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/kipas-led.webp",
+    "count": 3
+  },
+  {
+    "id": "kartu-elektronik",
+    "label": "Kartu Uang Elektronik",
+    "shortLabel": "Kartu Elektronik",
+    "subtitle": "Flazz, e-money, TapCash, dan BRIZZI dengan cetak satu atau dua sisi.",
+    "poster": "/assets/images/catalog-posters/kartu-catalog-v2.webp",
+    "storyTitle": "Kartu harian dengan identitas brand Anda",
+    "storyDescription": "Pilih Flazz, e-money, TapCash, atau BRIZZI. Tersedia opsi desain satu sisi dan dua sisi untuk souvenir perusahaan serta kegiatan promosi. Ketentuan saldo dikonfirmasi saat pemesanan.",
+    "products": [
+      {
+        "id": "kartu-flazz",
+        "name": "Kartu Flazz custom",
+        "image": "/assets/images/products/client-catalog/kartu-flazz.webp",
+        "minimum": "50 pcs",
+        "description": "Kartu Flazz custom dengan pilihan cetak satu sisi atau dua sisi. Konsultasikan desain, ketentuan saldo, dan jumlah kebutuhan kepada tim SJP.",
+        "group": "Kartu",
+        "source": {
+          "file": "CATALOG KARTU UANG ELEKTRONIK.pdf",
+          "page": 1,
+          "image": "1-1-1.png"
+        }
+      },
+      {
+        "id": "kartu-emoney",
+        "name": "Kartu e-money custom",
+        "image": "/assets/images/products/client-catalog/kartu-emoney.webp",
+        "minimum": "50 pcs",
+        "description": "Kartu e-money custom dengan pilihan cetak satu sisi atau dua sisi. Konsultasikan desain, ketentuan saldo, dan jumlah kebutuhan kepada tim SJP.",
+        "group": "Kartu",
+        "source": {
+          "file": "CATALOG KARTU UANG ELEKTRONIK.pdf",
+          "page": 1,
+          "image": "1-1-0.png"
+        }
+      },
+      {
+        "id": "kartu-tapcash",
+        "name": "Kartu TapCash custom",
+        "image": "/assets/images/products/client-catalog/kartu-tapcash.webp",
+        "minimum": "50 pcs",
+        "description": "Kartu TapCash custom dengan pilihan cetak satu sisi atau dua sisi. Konsultasikan desain, ketentuan saldo, dan jumlah kebutuhan kepada tim SJP.",
+        "group": "Kartu",
+        "source": {
+          "file": "CATALOG KARTU UANG ELEKTRONIK.pdf",
+          "page": 1,
+          "image": "1-1-2.png"
+        }
+      },
+      {
+        "id": "kartu-brizzi",
+        "name": "Kartu BRIZZI custom",
+        "image": "/assets/images/products/client-catalog/kartu-brizzi.webp",
+        "minimum": "50 pcs",
+        "description": "Kartu BRIZZI custom dengan pilihan cetak satu sisi atau dua sisi. Konsultasikan desain, ketentuan saldo, dan jumlah kebutuhan kepada tim SJP.",
+        "group": "Kartu",
+        "source": {
+          "file": "CATALOG KARTU UANG ELEKTRONIK.pdf",
+          "page": 1,
+          "image": "1-1-3.png"
+        }
+      }
+    ],
+    "image": "/assets/images/products/client-catalog/kartu-flazz.webp",
+    "count": 4
+  }
+]

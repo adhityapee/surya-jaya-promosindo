@@ -10,7 +10,7 @@ export default function Section11Section() {
       eyebrow="GIFT SET & HAMPERS CUSTOM"
       title="Apresiasi yang terasa personal"
       description="Susun produk, kemasan, dan kartu ucapan menjadi hadiah perusahaan yang lebih berkesan."
-      cta="Lihat 7 pilihan produk"
+      cta="Jelajahi katalog produk"
     />
   );
 }

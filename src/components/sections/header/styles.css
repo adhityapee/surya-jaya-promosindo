@@ -644,15 +644,31 @@ body{background:#fff;color:var(--charcoal)}
 }
 @media(prefers-reduced-motion:reduce){.header-utility-panel,.language .utility-caret{animation:none!important;transition-duration:.001ms!important}}
 
-/* Simplified two-page primary navigation */
-.navigation-wrap.simple-navigation-wrap{height:54px}
+/* Prominent two-page navigation remains visible while browsing. */
+.navigation-wrap.simple-navigation-wrap,.catalog-header.is-compact .navigation-wrap.simple-navigation-wrap{height:88px;max-height:none;overflow:visible;opacity:1;transform:none;visibility:visible;pointer-events:auto;border-top:1px solid #eee5eb;border-bottom:1px solid #eee5eb;background:#fcf9fb;transition:none}
 .simple-navigation-wrap .site-navigation{display:none}
-.simple-primary-nav{height:54px;display:flex;align-items:center;gap:32px}
-.simple-primary-nav a{position:relative;height:54px;display:flex;align-items:center;font-size:14px;font-weight:700;transition:color .18s}
-.simple-primary-nav a:hover,.simple-primary-nav a[aria-current="page"]{color:var(--magenta-dark)}
-.simple-primary-nav a::after{content:"";position:absolute;right:0;bottom:0;left:0;height:3px;background:var(--magenta);transform:scaleX(0);transition:transform .18s}
-.simple-primary-nav a:hover::after,.simple-primary-nav a[aria-current="page"]::after{transform:scaleX(1)}
-@media(max-width:760px){.navigation-wrap.simple-navigation-wrap{height:auto}.simple-primary-nav{width:100%;height:auto;display:grid;gap:0;padding:8px 28px 18px}.simple-primary-nav a{height:44px;border-bottom:1px solid var(--border)}.simple-primary-nav a::after{display:none}}
+.simple-primary-nav{height:100%;display:flex;align-items:center;gap:12px;padding-block:12px}
+.simple-primary-nav .primary-page-link{min-height:62px;display:flex;align-items:center;gap:12px;padding:10px 20px;border:1px solid #ded7dc;border-radius:5px;background:#fff;color:var(--charcoal);text-decoration:none;transition:background .18s,border-color .18s,transform .18s}
+.primary-page-link__copy{display:grid;gap:5px}.primary-page-link__copy strong{font-size:16px;line-height:1.15}.primary-page-link__copy small{font-size:11px;line-height:1.25;font-weight:400;color:#726770}
+.simple-primary-nav .primary-page-link:hover{background:#f7edf3;border-color:var(--magenta-dark)}
+.simple-primary-nav .primary-page-link[aria-current="page"]{border-color:var(--magenta-dark);background:#f6eaf1;color:var(--magenta-dark)}
+.simple-primary-nav .primary-page-link--catalog{min-width:280px;background:var(--magenta-dark);border-color:var(--magenta-dark);color:#fff}
+.simple-primary-nav .primary-page-link--catalog small{color:#fff;opacity:.9}.primary-page-link__arrow{margin-left:auto;transition:transform .18s}
+.simple-primary-nav .primary-page-link--catalog:hover,.simple-primary-nav .primary-page-link--catalog[aria-current="page"]{background:#8b275f;border-color:#8b275f;color:#fff}
+.simple-primary-nav .primary-page-link--catalog[aria-current="page"]{box-shadow:inset 0 -3px 0 #f3cf38}
+.primary-page-link--catalog:hover .primary-page-link__arrow{transform:translateX(3px)}
+.simple-primary-nav .primary-page-link:focus-visible{outline:3px solid #333;outline-offset:3px}.simple-primary-nav .primary-page-link:active{transform:translateY(1px)}
+:root{scroll-padding-top:80px}
+@media(max-width:760px){
+  .navigation-wrap.simple-navigation-wrap,.catalog-header.is-compact .navigation-wrap.simple-navigation-wrap{display:block;height:auto;max-height:none;opacity:1;visibility:visible;overflow:visible;transform:none;pointer-events:auto}
+  .simple-primary-nav{width:calc(100% - 28px);height:80px;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;padding:10px 0}
+  .simple-primary-nav .primary-page-link{min-width:0;min-height:58px;height:58px;padding:9px 11px;gap:8px}.primary-page-link__copy{gap:4px}.primary-page-link__copy strong{font-size:14px}.primary-page-link__copy small{font-size:9px}.primary-page-link>svg{width:20px;flex-shrink:0}.primary-page-link__arrow{display:none}
+  .simple-navigation-wrap .mobile-utility-bar{display:none}.simple-navigation-wrap.is-mobile-open .mobile-utility-bar{display:flex}
+  .catalog-search{min-width:0}.catalog-search>button{flex-shrink:0}
+  .primary-page-link:not(.primary-page-link--catalog) small{font-size:0}.primary-page-link:not(.primary-page-link--catalog) small::after{content:"Kenali SJP";font-size:9px}
+}
+@media(max-width:360px){.header-main{grid-template-columns:32px 48px minmax(0,1fr);gap:8px}.simple-primary-nav{grid-template-columns:1fr 1.45fr}.simple-primary-nav .primary-page-link{padding-inline:8px;gap:6px}.primary-page-link__copy strong{font-size:13px}.primary-page-link__copy small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.simple-primary-nav .primary-page-link,.primary-page-link__arrow{transition:none}}
 /* Marketplace navigation, wordmarks, and footer links */
 .marketplace-trigger>svg:first-child{color:var(--magenta-dark)}
 .marketplace-trigger strong,.marketplace-trigger small{display:block;line-height:1.2}

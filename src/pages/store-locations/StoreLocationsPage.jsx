@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+
 import { ArrowUpRight } from "@phosphor-icons/react/ArrowUpRight";
 import { Clock } from "@phosphor-icons/react/Clock";
 import { MapPin } from "@phosphor-icons/react/MapPin";
 import { Phone } from "@phosphor-icons/react/Phone";
 import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
+import SeoMetadata from "../../components/SeoMetadata.jsx";
 import HeaderSection from "../../components/sections/header/HeaderSection.jsx";
 import FooterSection from "../../components/sections/footer/FooterSection.jsx";
 import "./styles.css";
@@ -61,12 +62,13 @@ function MapPreview({ location }) {
 }
 
 export default function StoreLocationsPage() {
-  useEffect(() => {
-    document.title = "Lokasi Toko | Surya Jaya Promosindo";
-  }, []);
-
   return (
     <>
+      <SeoMetadata
+        title="Lokasi Workshop Surya Jaya Promosindo | Tangerang"
+        description="Kunjungi workshop Surya Jaya Promosindo di Cipondoh, Tangerang untuk konsultasi souvenir custom, sampel bahan, dan detail cetak."
+        path="/id/pages/lokasi-toko"
+      />
       <div data-pwc-section="header">
         <HeaderSection hideStoreLocationLink />
       </div>

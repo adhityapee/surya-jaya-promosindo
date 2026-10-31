@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { ArrowRight } from "@phosphor-icons/react/ArrowRight";
 import { Handshake } from "@phosphor-icons/react/Handshake";
 import { MapPin } from "@phosphor-icons/react/MapPin";
@@ -7,37 +7,34 @@ import { Palette } from "@phosphor-icons/react/Palette";
 import { Truck } from "@phosphor-icons/react/Truck";
 import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
 import MarketplaceMark from "../../components/MarketplaceMark.jsx";
+import SeoMetadata from "../../components/SeoMetadata.jsx";
 import HeaderSection from "../../components/sections/header/HeaderSection.jsx";
 import Section13Section from "../../components/sections/section-13/Section13Section.jsx";
 import FooterSection from "../../components/sections/footer/FooterSection.jsx";
 import { marketplaces } from "../../data/marketplaces.js";
+import clientCatalog from "../../data/clientCatalog.json";
 import "./styles.css";
 
 const whatsappMessage = "Halo Surya Jaya Promosindo, saya ingin berkonsultasi mengenai kebutuhan souvenir perusahaan. Mohon bantu rekomendasinya, terima kasih.";
 const whatsappUrl = `https://wa.me/6285740386268?text=${encodeURIComponent(whatsappMessage)}`;
-const processVideo = "https://videos.pexels.com/video-files/34888657/14781069_1920_1080_30fps.mp4";
+const processVideo = "/assets/videos/sjp-proses-cetak-uv-v1.mp4";
 
-const featuredCategories = [
-  { label: "Corporate Gift", copy: "Paket apresiasi untuk klien, relasi, dan tim.", image: "/assets/images/categories/gift-set-hampers.webp", href: "/products#corporate-gift", featured: true },
-  { label: "Tumbler & Mug", copy: "Produk harian untuk menjaga brand tetap terlihat.", image: "/assets/images/categories/tumbler-mug.webp", href: "/products#drinkware" },
-  { label: "Pulpen & Notebook", copy: "Perlengkapan kerja untuk seminar dan onboarding.", image: "/assets/images/categories/pulpen-notebook.webp", href: "/products#weekly-best" },
-  { label: "Tote Bag", copy: "Tas promosi untuk event dan kebutuhan perusahaan.", image: "/assets/images/categories/tote-goodie-bag.webp", href: "/products#bags" },
-];
+const featuredCategories = clientCatalog.filter((category) => ["weekly-best", "agenda", "drinkware", "bags"].includes(category.id)).map((category, index) => ({ label: category.label, copy: category.subtitle, image: category.image, href: `/products#${category.id}`, featured: index === 0 }));
 
 const workflow = [
-  { icon: Handshake, title: "Diskusikan kebutuhan", copy: "Sampaikan jenis produk, jumlah, target waktu, dan kebutuhan brand." },
+  { icon: Handshake, title: "Diskusikan kebutuhan", copy: "Pilih souvenir dari katalog produk, lalu sampaikan jumlah, target waktu, dan kebutuhan brand." },
   { icon: Palette, title: "Setujui desain", copy: "Tim kami membantu meninjau penempatan logo dan detail cetak." },
   { icon: Package, title: "Produksi pesanan", copy: "Pesanan dikerjakan sesuai spesifikasi yang telah dikonfirmasi." },
-  { icon: Truck, title: "Terima pengiriman", copy: "Produk dikemas dan dikirim ke alamat tujuan di Indonesia." },
+  { icon: Truck, title: "Terima pengiriman", copy: "Pesanan dikemas dan dikirim ke alamat tujuan di Indonesia." },
 ];
 
 export default function HomePage() {
-  useEffect(() => {
-    document.title = "Surya Jaya Promosindo | Partner Souvenir Perusahaan";
-  }, []);
-
   return (
     <>
+      <SeoMetadata
+        title="Surya Jaya Promosindo | Souvenir Custom untuk Perusahaan"
+        description="Souvenir custom, corporate gift, merchandise event, dan kebutuhan promosi untuk perusahaan, instansi, komunitas, dan acara di seluruh Indonesia."
+      />
       <div data-pwc-section="header"><HeaderSection /></div>
       <main className="home-page">
         <section className="home-hero content-shell">
@@ -46,12 +43,12 @@ export default function HomePage() {
             <h1>Souvenir custom yang membawa brand Anda lebih jauh</h1>
             <p>Kami membantu perusahaan menyiapkan merchandise, corporate gift, dan kebutuhan event dari konsultasi hingga pengiriman.</p>
             <div className="home-actions">
-              <a className="home-button home-button--primary" href="/products">Lihat produk<ArrowRight size={18} weight="bold" aria-hidden="true" /></a>
+              <a className="home-button home-button--primary" href="/products">Lihat katalog produk<ArrowRight size={18} weight="bold" aria-hidden="true" /></a>
               <a className="home-button home-button--secondary" href={whatsappUrl} target="_blank" rel="noreferrer"><WhatsappLogo size={19} weight="fill" aria-hidden="true" />Konsultasi WhatsApp</a>
             </div>
           </div>
           <div className="home-hero__visual">
-            <img src="/assets/images/banners/giftset-hampers-office-banner.webp" alt="Penyerahan gift set perusahaan di ruang kerja profesional" />
+            <img src="/assets/images/catalog-posters/pulpen-catalog-v2.webp" alt="Pilihan pulpen plastik, gel, dan metal custom Surya Jaya Promosindo" style={{ objectFit: "contain", background: "#fff" }} />
           </div>
         </section>
 
@@ -78,14 +75,14 @@ export default function HomePage() {
               </a>
             ))}
           </div>
-          <a className="home-text-link" href="/products">Lihat semua kategori<ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
+          <a className="home-text-link" href="/products">Jelajahi katalog produk<ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
         </section>
 
         <section className="home-marketplaces content-shell" aria-labelledby="marketplace-title">
           <div className="home-marketplaces__intro">
             <span className="home-eyebrow">TOKO ONLINE SJP</span>
             <h2 id="marketplace-title">Belanja melalui marketplace pilihan Anda</h2>
-            <p>Untuk produk siap pesan, kunjungi toko online Surya Jaya Promosindo. Kebutuhan custom dan pesanan perusahaan tetap dapat dikonsultasikan melalui WhatsApp.</p>
+            <p>Jelajahi katalog produk siap pesan di toko online Surya Jaya Promosindo. Kebutuhan custom dan pesanan perusahaan tetap dapat dikonsultasikan melalui WhatsApp.</p>
           </div>
           <div className="home-marketplaces__list">
             {marketplaces.map((marketplace) => (
@@ -100,16 +97,24 @@ export default function HomePage() {
 
         <section className="home-process content-shell" aria-labelledby="process-title">
           <div className="home-process__copy">
-            <h2 id="process-title">Detail produksi yang dapat Anda lihat</h2>
-            <p>Area ini disiapkan untuk dokumentasi proses cetak, kontrol detail, dan pengerjaan pesanan Surya Jaya Promosindo.</p>
+            <h2 id="process-title">Lihat proses cetak UV pada souvenir</h2>
+            <p>Dari pulpen dan kartu hingga tumbler, lihat proses cetak UV dan detail hasil pengerjaan kami. Konsultasikan pilihan souvenir, posisi logo, dan kebutuhan desain Anda bersama tim SJP.</p>
             <a className="home-text-link" href={whatsappUrl} target="_blank" rel="noreferrer">Diskusikan kebutuhan Anda<ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
           </div>
           <div className="home-process__media">
-            <video autoPlay muted loop controls playsInline preload="metadata" poster="https://images.pexels.com/videos/34888657/pexels-photo-34888657.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260">
-              <source src={processVideo} type="video/mp4" />
-              Browser Anda belum mendukung pemutaran video.
-            </video>
-            <p>Video placeholder proses screen printing. Dokumentasi produksi SJP dapat menggantikan video ini nanti.</p>
+            <video
+              src={processVideo}
+              aria-label="Dokumentasi proses cetak UV dan hasil souvenir Surya Jaya Promosindo"
+              poster="/assets/images/sjp-proses-cetak-uv.webp"
+              width="576"
+              height="1024"
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              preload="metadata"
+            >Browser Anda tidak mendukung pemutaran video. <a href={processVideo}>Tonton dokumentasi cetak UV</a>.</video>
           </div>
         </section>
 
@@ -134,7 +139,7 @@ export default function HomePage() {
         <section className="home-contact content-shell" aria-labelledby="home-contact-title">
           <div>
             <h2 id="home-contact-title">Siapkan souvenir perusahaan bersama tim kami</h2>
-            <p>Konsultasikan produk, jumlah, teknik cetak, dan waktu produksi sebelum melakukan pemesanan.</p>
+            <p>Pilih souvenir dari katalog produk, lalu konsultasikan jumlah, teknik cetak, dan waktu pengerjaannya sebelum memesan.</p>
           </div>
           <div className="home-contact__actions">
             <a className="home-button home-button--primary" href={whatsappUrl} target="_blank" rel="noreferrer"><WhatsappLogo size={19} weight="fill" aria-hidden="true" />Chat WhatsApp</a>

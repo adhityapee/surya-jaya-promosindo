@@ -27,7 +27,7 @@ export default function Section5Section() {
       eyebrow="PULPEN & NOTEBOOK CUSTOM"
       title="Ide besar dimulai dari catatan kecil"
       description="Untuk meeting, seminar, onboarding, dan hadiah perusahaan yang terasa lebih personal."
-      cta="Lihat 7 pilihan produk"
+      cta="Jelajahi katalog produk"
     />
   );
 }

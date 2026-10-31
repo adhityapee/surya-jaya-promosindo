@@ -10,7 +10,7 @@ export default function Section10Section() {
       eyebrow="TOTE BAG & GOODIE BAG CUSTOM"
       title="Brand Anda ikut ke mana saja"
       description="Tas custom yang praktis untuk acara, aktivitas kantor, belanja, dan merchandise komunitas."
-      cta="Lihat 7 pilihan produk"
+      cta="Jelajahi katalog produk"
     />
   );
 }

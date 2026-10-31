@@ -1,4 +1,4 @@
-﻿const categories = [
+const categories = [
   ["Pulpen & Notebook", "pulpen-notebook.webp", "weekly-best"],
   ["Tumbler & Mug", "tumbler-mug.webp", "drinkware"],
   ["Lanyard & ID Card", "lanyard-id-card.webp", "event-kit"],
@@ -19,7 +19,7 @@ export default function Section4Section() {
       <h2 className="section-heading">Kategori souvenir populer</h2>
       <div className="category-grid">
         {categories.map(([label, image, anchor]) => {
-          const content = <><img src={`/assets/images/categories/${image}`} alt={label} /><span>{label}</span></>;
+          const content = <><img src={`/assets/images/categories/${image}`} alt={`${label} custom dari Surya Jaya Promosindo`} loading="lazy" decoding="async" /><span>{label}</span></>;
           return anchor
             ? <a className="category-card" href={`#${anchor}`} key={label}>{content}</a>
             : <div className="category-card category-card--static" key={label}>{content}</div>;

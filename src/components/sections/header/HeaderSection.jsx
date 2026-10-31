@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CaretDown } from "@phosphor-icons/react/CaretDown";
+import { ArrowRight } from "@phosphor-icons/react/ArrowRight";
+import { House } from "@phosphor-icons/react/House";
+import { SquaresFour } from "@phosphor-icons/react/SquaresFour";
 import { Info } from "@phosphor-icons/react/Info";
 import { MagnifyingGlass } from "@phosphor-icons/react/MagnifyingGlass";
 import { Package } from "@phosphor-icons/react/Package";
@@ -9,9 +12,10 @@ import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
 import { X } from "@phosphor-icons/react/X";
 import MarketplaceMark from "../../MarketplaceMark.jsx";
 import { marketplaces } from "../../../data/marketplaces.js";
+import clientCatalog from "../../../data/clientCatalog.json";
 import "./styles.css";
 
-const whatsappMessage = "Halo Surya Jaya Promosindo, saya ingin berkonsultasi mengenai pemesanan souvenir custom. Produk yang saya butuhkan: [nama produk]. Jumlah: [jumlah pcs]. Mohon informasinya, terima kasih.";
+const whatsappMessage = "Halo Surya Jaya Promosindo, saya sudah melihat katalog produk dan ingin berkonsultasi mengenai pemesanan souvenir custom. Pilihan saya: [nama souvenir]. Jumlah: [jumlah pcs]. Mohon informasinya, terima kasih.";
 const whatsappUrl = "https://wa.me/6285740386268?text=" + encodeURIComponent(whatsappMessage);
 
 const menus = [
@@ -67,16 +71,7 @@ const menus = [
   },
 ];
 
-const catalogTerms = [
-  "Tumbler dan mug custom",
-  "Pulpen dan notebook custom",
-  "Tote bag dan goodie bag",
-  "Lanyard dan ID card",
-  "Gift set dan hampers",
-  "Gadget custom",
-  "Seminar dan event kit",
-  "Cetak promosi",
-];
+const catalogTerms = [...clientCatalog.map((category) => category.label), ...clientCatalog.flatMap((category) => category.products.map((product) => product.name))];
 
 const englishMenuTerms = {
   "BOTOL VAKUM": "VACUUM BOTTLES", "TUMBLER SEDOTAN": "STRAW TUMBLERS", "BOTOL SPORT": "SPORT BOTTLES", "MUG KERAMIK": "CERAMIC MUGS", "MUG ENAMEL": "ENAMEL MUGS", "TEKNIK CETAK": "PRINTING METHODS", SUBLIMASI: "SUBLIMATION", "LASER GRAVIR": "LASER ENGRAVING", "COCOK UNTUK": "IDEAL FOR", "SOUVENIR KANTOR": "OFFICE MERCHANDISE", "HADIAH KLIEN": "CLIENT GIFTS", "MERCHANDISE EVENT": "EVENT MERCHANDISE",
@@ -98,8 +93,8 @@ const shippingPartners = ["JNE", "J&T Express", "SiCepat", "Wahana", "Ninja Xpre
 const headerCopy = {
   id: {
     browserNote: "Katalog digital Surya Jaya Promosindo: solusi souvenir custom untuk perusahaan, komunitas, dan acara.",
-    searchPlaceholder: "Cari souvenir atau jenis cetak...",
-    searchLabel: "Cari katalog",
+    searchPlaceholder: "Cari dalam katalog produk...",
+    searchLabel: "Cari katalog produk",
     searchResults: "Hasil katalog",
     mobileOpen: "Buka menu",
     mobileClose: "Tutup menu",
@@ -107,7 +102,7 @@ const headerCopy = {
     inspiration: "Inspirasi",
     navLabel: "Katalog utama",
     homeLabel: "Beranda",
-    productsLabel: "Produk",
+    productsLabel: "Katalog Produk",
     currentLanguage: "Indonesia",
     languageAria: "Pilih bahasa",
     languageTitle: "Pilih bahasa tampilan",
@@ -116,10 +111,10 @@ const headerCopy = {
     orderAria: "Buka informasi pemesanan dan pengiriman",
     orderEyebrow: "INFORMASI PEMESANAN",
     orderHeading: "Dari konsultasi sampai pesanan tiba",
-    orderIntro: "Tim kami membantu pemilihan produk, proses custom, dan pengiriman sesuai kebutuhan perusahaan Anda.",
+    orderIntro: "Tim kami membantu Anda memilih souvenir dari katalog produk, menyiapkan desain custom, dan mengatur pengiriman sesuai kebutuhan perusahaan.",
     steps: [
-      { title: "1. Konsultasi pesanan", body: "Sampaikan jenis produk, jumlah, tenggat, dan referensi desain untuk mendapatkan rekomendasi." },
-      { title: "2. Konfirmasi dan produksi", body: "Produksi dimulai setelah spesifikasi produk dan desain cetak disetujui bersama." },
+      { title: "1. Konsultasi pesanan", body: "Pilih souvenir dari katalog produk, lalu sampaikan jumlah, tenggat, dan referensi desain untuk mendapatkan rekomendasi." },
+      { title: "2. Konfirmasi dan produksi", body: "Pengerjaan dimulai setelah spesifikasi pesanan dan desain cetak disetujui bersama." },
       { title: "3. Pengiriman", body: "Pesanan dikemas dan diserahkan ke ekspedisi pilihan. Nomor pelacakan dibagikan setelah barang dikirim." },
     ],
     courierTitle: "Mitra pengiriman",
@@ -134,7 +129,7 @@ const headerCopy = {
     marketplaceAria: "Buka pilihan toko online",
     marketplaceEyebrow: "TOKO ONLINE SJP",
     marketplaceHeading: "Belanja melalui marketplace",
-    marketplaceIntro: "Pilih marketplace yang biasa Anda gunakan. Konsultasi produk custom tetap tersedia melalui WhatsApp.",
+    marketplaceIntro: "Jelajahi katalog produk di marketplace pilihan Anda. Konsultasi souvenir custom tetap tersedia melalui WhatsApp.",
     menuLabels: ["TUMBLER & MUG", "PULPEN & NOTEBOOK", "TAS & GOODIE BAG", "LANYARD & ID CARD", "GADGET", "GIFT SET & HAMPERS", "EVENT KIT", "APPAREL CUSTOM", "SOUVENIR CUSTOM", "CETAK PROMOSI"],
     secondary: ["KATALOG SOUVENIR CUSTOM", "PALING DIMINATI", "CORPORATE GIFT", "PAKET EVENT", "Lokasi Toko"],
   },
@@ -180,14 +175,15 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(() => new URLSearchParams(window.location.search).get("q") || "");
+  const [searchFocused, setSearchFocused] = useState(false);
   const [openUtility, setOpenUtility] = useState(null);
   const language = "id";
   const copy = headerCopy.id;
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
   const primaryLinks = [
-    { href: "/", label: copy.homeLabel, active: currentPath === "/" },
-    { href: "/products", label: copy.productsLabel, active: currentPath === "/products" },
+    { href: "/", label: copy.homeLabel, description: "Kenali Surya Jaya Promosindo", icon: House, active: currentPath === "/" },
+    { href: "/products", label: copy.productsLabel, description: `${clientCatalog.reduce((total, category) => total + category.count, 0)} pilihan souvenir custom`, icon: SquaresFour, featured: true, active: currentPath === "/products" },
   ];
   const headerRef = useRef(null);
   const scrollSentinelRef = useRef(null);
@@ -265,11 +261,7 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
 
   const submitSearch = (event) => {
     event.preventDefault();
-    if (currentPath === "/products") {
-      document.querySelector("[data-pwc-section='features']")?.scrollIntoView({ behavior: "smooth" });
-      return;
-    }
-    window.location.assign("/products#weekly-best");
+    window.location.assign(query.trim() ? `/products?q=${encodeURIComponent(query.trim())}#search-results` : "/products#categories");
   };
 
   return (
@@ -297,15 +289,15 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
           <img src="/assets/images/surya-jaya-promosindo-logo.webp" alt="Logo Surya Jaya Promosindo" />
           <span>Surya Jaya<br />Promosindo</span>
         </a>
-        <form className="catalog-search" role="search" onSubmit={submitSearch}>
+        <form className="catalog-search" role="search" onSubmit={submitSearch} onFocus={() => setSearchFocused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setSearchFocused(false); }}>
           <input value={query} onChange={(event) => setQuery(event.target.value)} aria-label={copy.searchLabel} placeholder={copy.searchPlaceholder} />
           <button type="submit" aria-label={copy.searchLabel}>
             <MagnifyingGlass size={24} weight="regular" aria-hidden="true" />
           </button>
-          {suggestions.length > 0 && (
+          {searchFocused && suggestions.length > 0 && (
             <div className="search-suggestions">
               <span className="suggestion-label">{copy.searchResults}</span>
-              {suggestions.map((item) => <button key={item} type="submit">{item}</button>)}
+              {suggestions.map((item) => <button key={item} type="button" onClick={() => window.location.assign(`/products?q=${encodeURIComponent(item)}#search-results`)}>{item}</button>)}
             </div>
           )}
         </form>
@@ -378,7 +370,11 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
           <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={copy.whatsappAria}><WhatsappLogo size={20} weight="fill" aria-hidden="true" />WhatsApp</a>
         </div>
         <nav className="simple-primary-nav page-shell" aria-label={copy.navLabel}>
-          {primaryLinks.map((item) => <a href={item.href} aria-current={item.active ? "page" : undefined} key={item.href}>{item.label}</a>)}
+          {primaryLinks.map(({ icon: Icon, ...item }) => <a className={`primary-page-link${item.featured ? " primary-page-link--catalog" : ""}`} href={item.href} aria-label={item.label} aria-current={item.active ? "page" : undefined} key={item.href}>
+            <Icon size={24} weight={item.active ? "fill" : "regular"} aria-hidden="true" />
+            <span className="primary-page-link__copy"><strong>{item.label}</strong><small>{item.description}</small></span>
+            {item.featured && <ArrowRight className="primary-page-link__arrow" size={21} weight="bold" aria-hidden="true" />}
+          </a>)}
         </nav>
         <nav className="site-navigation page-shell" aria-label={copy.navLabel} data-pwc-critical="navigation-1">
           <ul className="primary-nav">

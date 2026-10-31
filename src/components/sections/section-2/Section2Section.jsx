@@ -1,45 +1,29 @@
 import { useEffect, useState } from "react";
-
-const slides = [
-  { desktop: "/assets/images/hero/hero-pen-office.webp", mobile: "/assets/images/hero/hero-pen-office.webp", label: "Pulpen custom untuk setiap ide", note: "Detail kecil yang selalu hadir di meja kerja" },
-  { desktop: "/assets/images/hero/hero-tumbler-office.webp", mobile: "/assets/images/hero/hero-tumbler-office.webp", label: "Tumbler untuk ritme kerja aktif", note: "Souvenir fungsional yang menemani aktivitas harian" },
-  { desktop: "/assets/images/hero/hero-tote-office.webp", mobile: "/assets/images/hero/hero-tote-office.webp", label: "Tote bag yang membawa identitas brand", note: "Praktis, reusable, dan mudah disesuaikan" },
-  { desktop: "/assets/images/hero/hero-fan-office.webp", mobile: "/assets/images/hero/hero-fan-office.webp", label: "Kipas portable untuk aktivitas kantor", note: "Souvenir praktis dengan branding yang selalu terlihat" },
-  { desktop: "/assets/images/hero/hero-corporate-gift-office.webp", mobile: "/assets/images/hero/hero-corporate-gift-office.webp", label: "Corporate gift yang siap berkesan", note: "Produk dan kemasan dalam satu identitas visual" },
-  { desktop: "/assets/images/hero/hero-keychain-office.webp", mobile: "/assets/images/hero/hero-keychain-office.webp", label: "Gantungan kunci untuk identitas brand", note: "Aksen kecil yang ikut ke mana pun tas dibawa" },
-  { desktop: "/assets/images/hero/hero-notebook-office.webp", mobile: "/assets/images/hero/hero-notebook-office.webp", label: "Notebook untuk ide yang terus bergerak", note: "Teman rapat dengan detail custom yang profesional" },
-  { desktop: "/assets/images/hero/hero-calendar-office.webp", mobile: "/assets/images/hero/hero-calendar-office.webp", label: "Kalender custom untuk ruang kerja", note: "Kalender meja dan dinding yang menjaga brand tetap terlihat" },
-  { desktop: "/assets/images/hero/hero-mug-meeting-office.webp", mobile: "/assets/images/hero/hero-mug-meeting-office.webp", label: "Mug custom untuk setiap pertemuan", note: "Brand hadir dalam percakapan dan kolaborasi tim" },
-  { desktop: "/assets/images/hero/hero-lanyard-team-office.webp", mobile: "/assets/images/hero/hero-lanyard-team-office.webp", label: "Lanyard dan ID card profesional", note: "Identitas tim yang konsisten, rapi, dan mudah dikenali" },
-];
+import catalog from "../../../data/clientCatalog.json";
 
 export default function Section2Section() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   useEffect(() => {
-    const timer = window.setInterval(() => setActive((value) => (value + 1) % slides.length), 9500);
+    if (paused) return undefined;
+    const timer = window.setInterval(() => setActive((value) => (value + 1) % catalog.length), 9500);
     return () => window.clearInterval(timer);
-  }, []);
-  const go = (next) => setActive((next + slides.length) % slides.length);
-  const activate = (index) => setActive((value) => value === index ? (index + 1) % slides.length : index);
-
+  }, [paused]);
+  const go = (direction) => setActive((value) => (value + direction + catalog.length) % catalog.length);
   return (
-    <section className="hero-carousel" data-pwc-critical="hero-1">
-      <div className="hero-track" data-pwc-critical="hero-2" data-pwc-controlled="hero-carousel" style={{ transform: `translateX(-${active * 100}%)` }}>
-        {slides.map((slide, index) => (
-          <button className="hero-slide" type="button" key={`${slide.label}-${index}`} data-pwc-interaction={`interaction-${11 + index}`} onClick={() => activate(index)} aria-label={slide.label}>
-            <picture>
-              <source media="(max-width: 760px)" srcSet={slide.mobile} />
-              <img src={slide.desktop} alt="" />
-            </picture>
-            <span className="hero-copy"><small>Katalog Surya Jaya Promosindo</small><strong>{slide.label}</strong><em>{slide.note}</em></span>
-          </button>
+    <section className="hero-carousel pdf-hero" aria-label="Pilihan kategori katalog produk" aria-roledescription="carousel">
+      <div className="hero-track" style={{ transform: `translateX(-${active * 100}%)` }}>
+        {catalog.map((category, index) => (
+          <div className="hero-slide" key={category.id} aria-hidden={active !== index} inert={active !== index ? "" : undefined}>
+            <div className="pdf-hero__copy"><small>KATALOG SURYA JAYA PROMOSINDO</small><strong>{category.storyTitle}</strong><p>{category.subtitle}</p><a className="catalog-button" href={`#${category.id}`} tabIndex={active === index ? 0 : -1}>Jelajahi {category.count} pilihan →</a></div>
+            <a href={`#${category.id}`} tabIndex={active === index ? 0 : -1} className="pdf-hero__visual"><img className="pdf-hero__visual" src={category.poster} alt={`Katalog ${category.label} custom Surya Jaya Promosindo`} loading={index === 0 ? "eager" : "lazy"} width="1254" height="1254" /></a>
+          </div>
         ))}
       </div>
-      <button className="hero-arrow prev" type="button" data-pwc-interaction="interaction-23" onClick={() => go(active - 1)} aria-label="Slide sebelumnya">‹</button>
-      <button className="hero-arrow next" type="button" data-pwc-interaction="interaction-24" onClick={() => go(active + 1)} aria-label="Slide berikutnya">›</button>
-      <div className="hero-pagination" aria-label="Pilih slide">
-        {slides.map((slide, index) => <button className={active === index ? "active" : ""} type="button" key={slide.label} data-pwc-interaction={`interaction-${25 + index}`} onClick={() => activate(index)} aria-label={`Slide ${index + 1}`} />)}
-      </div>
+      <button className="hero-arrow prev" type="button" onClick={() => go(-1)} aria-label="Slide sebelumnya">‹</button>
+      <button className="hero-arrow next" type="button" onClick={() => go(1)} aria-label="Slide berikutnya">›</button>
+      <div className="hero-pagination" aria-label="Pilih kategori">{catalog.map((category, index) => <button className={active === index ? "active" : ""} type="button" key={category.id} onClick={() => setActive(index)} aria-label={`Tampilkan ${category.label}`} aria-current={active === index ? "true" : undefined} />)}</div>
+      <button className="pdf-hero-pause" type="button" onClick={() => setPaused((value) => !value)} aria-pressed={paused}>{paused ? "Putar otomatis" : "Jeda"}</button>
     </section>
   );
 }

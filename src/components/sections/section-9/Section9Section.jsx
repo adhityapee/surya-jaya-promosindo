@@ -10,7 +10,7 @@ export default function Section9Section() {
       eyebrow="LANYARD & ID CARD CUSTOM"
       title="Identitas yang menyatukan tim"
       description="Lanyard dan kartu identitas custom untuk kantor, seminar, event, dan kebutuhan komunitas."
-      cta="Lihat 7 pilihan produk"
+      cta="Jelajahi katalog produk"
     />
   );
 }

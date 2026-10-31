@@ -10,7 +10,7 @@ export default function Section7Section() {
       eyebrow="TUMBLER & MUG CUSTOM"
       title="Temani ritme kerja setiap hari"
       description="Drinkware custom untuk meja kerja, perjalanan, event, dan apresiasi tim yang lebih berkesan."
-      cta="Lihat 7 pilihan produk"
+      cta="Jelajahi katalog produk"
     />
   );
 }
