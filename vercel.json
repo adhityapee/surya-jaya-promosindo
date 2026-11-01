@@ -2,6 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/gallery",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/index.html"
+    },
+    {
       "source": "/id/pages/lokasi-toko",
       "destination": "/index.html"
     },

@@ -1,0 +1,5 @@
+.gallery-page{padding-block:60px 90px;min-height:65vh}
+.gallery-page__heading{max-width:720px;margin-bottom:44px}
+.gallery-page__heading h1{margin:0;color:var(--charcoal);font-size:clamp(36px,4.5vw,60px);line-height:1.06;letter-spacing:-.04em;text-wrap:balance}
+.gallery-page__heading p{max-width:560px;margin:20px 0 0;color:#686369;line-height:1.65}
+@media(max-width:760px){.gallery-page{padding-block:36px 60px}.gallery-page__heading{margin-bottom:28px}}

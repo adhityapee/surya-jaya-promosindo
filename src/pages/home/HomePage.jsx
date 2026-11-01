@@ -7,6 +7,8 @@ import { Palette } from "@phosphor-icons/react/Palette";
 import { Truck } from "@phosphor-icons/react/Truck";
 import { WhatsappLogo } from "@phosphor-icons/react/WhatsappLogo";
 import MarketplaceMark from "../../components/MarketplaceMark.jsx";
+import PhotoGallery from "../../components/PhotoGallery.jsx";
+import { galleryPhotos } from "../../data/gallery.js";
 import SeoMetadata from "../../components/SeoMetadata.jsx";
 import HeaderSection from "../../components/sections/header/HeaderSection.jsx";
 import Section13Section from "../../components/sections/section-13/Section13Section.jsx";
@@ -116,6 +118,12 @@ export default function HomePage() {
               preload="metadata"
             >Browser Anda tidak mendukung pemutaran video. <a href={processVideo}>Tonton dokumentasi cetak UV</a>.</video>
           </div>
+        </section>
+
+        <section className="home-gallery content-shell" aria-labelledby="home-gallery-title">
+          <div className="home-section-heading"><h2 id="home-gallery-title">Hasil pengerjaan kami</h2><p>Foto hasil custom yang telah kami kerjakan untuk pelanggan.</p></div>
+          <PhotoGallery photos={galleryPhotos} preview />
+          <a className="home-text-link" href="/gallery">Lihat galeri<ArrowRight size={17} weight="bold" aria-hidden="true" /></a>
         </section>
 
         <section className="home-workflow content-shell" aria-labelledby="workflow-title">

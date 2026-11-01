@@ -10,6 +10,7 @@ const whatsappUrl = "https://wa.me/6285740386268?text=" + encodeURIComponent(wha
 
 const information = [
   { label: "Katalog Produk", href: "/products#categories" },
+  { label: "Galeri hasil custom", href: "/gallery" },
   { label: "Pilihan pulpen custom", href: "/products#weekly-best" },
   { label: "Agenda perusahaan", href: "/products#agenda" },
   { label: "Informasi pemesanan", href: whatsappUrl, external: true },

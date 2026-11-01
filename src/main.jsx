@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client'
 import HomePage from './pages/home/HomePage.jsx'
 import ProductsPage from './pages/products/ProductsPage.jsx'
 import StoreLocationsPage from './pages/store-locations/StoreLocationsPage.jsx'
+import GalleryPage from './pages/gallery/GalleryPage.jsx'
 import './index.css'
 
 const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/'
 const Page = normalizedPath === '/products'
   ? ProductsPage
-  : normalizedPath === '/id/pages/lokasi-toko'
+  : normalizedPath === '/gallery'
+    ? GalleryPage
+    : normalizedPath === '/id/pages/lokasi-toko'
     ? StoreLocationsPage
     : HomePage
 

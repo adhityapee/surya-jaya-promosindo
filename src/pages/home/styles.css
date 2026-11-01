@@ -1,4 +1,6 @@
 .home-page{background:#fff;color:var(--charcoal)}
+.home-gallery{padding-block:64px 72px;border-top:1px solid var(--border)}
+.home-gallery .home-section-heading{margin-bottom:32px}
 .home-hero{min-height:620px;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);align-items:center;gap:clamp(36px,6vw,92px);padding-block:56px 68px}
 .home-hero__copy{max-width:570px}
 .home-eyebrow{display:block;margin-bottom:17px;color:var(--magenta-dark);font-size:12px;font-weight:700;letter-spacing:.12em}

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CaretDown } from "@phosphor-icons/react/CaretDown";
 import { ArrowRight } from "@phosphor-icons/react/ArrowRight";
 import { House } from "@phosphor-icons/react/House";
+import { Images } from "@phosphor-icons/react/Images";
 import { SquaresFour } from "@phosphor-icons/react/SquaresFour";
 import { Info } from "@phosphor-icons/react/Info";
 import { MagnifyingGlass } from "@phosphor-icons/react/MagnifyingGlass";
@@ -184,6 +185,7 @@ export default function HeaderSection({ hideStoreLocationLink = false }) {
   const primaryLinks = [
     { href: "/", label: copy.homeLabel, description: "Kenali Surya Jaya Promosindo", icon: House, active: currentPath === "/" },
     { href: "/products", label: copy.productsLabel, description: `${clientCatalog.reduce((total, category) => total + category.count, 0)} pilihan souvenir custom`, icon: SquaresFour, featured: true, active: currentPath === "/products" },
+    { href: "/gallery", label: "Galeri", description: "Hasil custom pelanggan", icon: Images, active: currentPath === "/gallery" },
   ];
   const headerRef = useRef(null);
   const scrollSentinelRef = useRef(null);
